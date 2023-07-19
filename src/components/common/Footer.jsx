@@ -25,8 +25,8 @@ export const Footer = () => {
               <i className="bi bi-instagram"></i>
               <p>ICONO fb</p>
               <i className="bi bi-facebook"></i>
-              <p>ICONO wp</p>
-              <i className="bi bi-"></i>
+            
+              <i class="bi bi-whatsapp"></i>
             </div>
           </article>
         </section>
