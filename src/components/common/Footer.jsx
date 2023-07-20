@@ -1,5 +1,5 @@
 import "../../css/footer.css";
-// import "bootstrap-icons/font/bootstrap-icons.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 export const Footer = () => {
   return (
@@ -20,13 +20,10 @@ export const Footer = () => {
           </article>
           <article className="text-center">
             <h5> Segui nuestras redes sociales </h5>
-            <div className="d-flex justify-content-evenly">
-              <p>ICONO ig</p>
-              <i className="bi bi-instagram"></i>
-              <p>ICONO fb</p>
-              <i className="bi bi-facebook"></i>
-              <p>ICONO wp</p>
-              <i className="bi bi-"></i>
+            <div className="iconos text-center">
+              <i className="bi bi-instagram linkSolo" ><span>Instagram</span> </i>   
+              <i className="bi bi-facebook pt-1 linkSolo "><span>Facebook</span></i>
+              <i class="bi bi-whatsapp linkSolo"> <span>Whatsapp</span> </i>
             </div>
           </article>
         </section>
