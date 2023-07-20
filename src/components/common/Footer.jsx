@@ -14,16 +14,16 @@ export const Footer = () => {
             />
           </article>
 
-          <article className="text-center">
-            <h5> Quienes somos </h5>
-            <h5> Contactate con nosotros </h5>
+          <article className="text-center letraAmatic fw-bold ">
+            <h1> Quienes somos </h1> 
+            <h1> Contactate con nosotros </h1>
           </article>
-          <article className="text-center">
-            <h5> Segui nuestras redes sociales </h5>
+          <article className="text-center letraAmatic fw-bold">
+            <h1> Segui nuestras redes sociales </h1>
             <div className="iconos text-center">
               <i className="bi bi-instagram linkSolo" ><span>Instagram</span> </i>   
               <i className="bi bi-facebook pt-1 linkSolo "><span>Facebook</span></i>
-              <i class="bi bi-whatsapp linkSolo"> <span>Whatsapp</span> </i>
+              <i class="bi bi-whatsapp linkSolo "> <span>Whatsapp</span> </i>
             </div>
           </article>
         </section>
