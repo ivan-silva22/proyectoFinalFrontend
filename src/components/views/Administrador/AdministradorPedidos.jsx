@@ -1,6 +1,6 @@
 import { Table, Container, Button, Row, Col } from "react-bootstrap";
 
-const AdministradorPedidios = () => {
+const AdministradorPedidos = () => {
     return (
         <Container>
       <Row>
@@ -47,4 +47,4 @@ const AdministradorPedidios = () => {
     );
 };
 
-export default AdministradorPedidios;
+export default AdministradorPedidos;

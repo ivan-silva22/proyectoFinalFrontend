@@ -1,22 +1,26 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 import { Footer } from './components/common/Footer'
-// import Pedidos from './components/views/Pedidos';
-// import AdministradorPedidios from './components/views/Administrador/AdministradorPedidos';
-// import AdministradorUsuarios from './components/views/Administrador/AdministradorUsuarios';
-// import AdministradorProductos from './components/views/Administrador/AdministradorProductos';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Pedidos from './components/views/Pedidos';
+import AdministradorUsuarios from './components/views/Administrador/AdministradorUsuarios';
+import AdministradorProductos from './components/views/Administrador/AdministradorProductos';
+import AdministradorPedidos from './components/views/Administrador/AdministradorPedidos';
 
 function App() {
   
 
   return (
-    <>
-      <Footer></Footer>
-      {/* <AdministradorProductos></AdministradorProductos> */}
-      {/* <AdministradorUsuarios></AdministradorUsuarios> */}
-      {/* <AdministradorPedidios></AdministradorPedidios> */}
-      {/* <Pedidos></Pedidos> */}
-    </>
+
+    <BrowserRouter>
+        <Routes>
+            <Route exact path="/pedidos" element={<Pedidos></Pedidos>}></Route>
+            <Route exact path="/administradorProductos" element={<AdministradorProductos></AdministradorProductos>}></Route>
+            <Route exact path="/administradorusuarios" element={<AdministradorUsuarios></AdministradorUsuarios>}></Route>
+            <Route exact path="/Administradorpedidos" element={<AdministradorPedidos></AdministradorPedidos>}></Route>
+        </Routes>
+        <Footer></Footer>
+      </BrowserRouter>
   )
 }
 
