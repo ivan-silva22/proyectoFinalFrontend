@@ -1,7 +1,7 @@
 import "../../css/footer.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
-export const Footer = () => {
+ const Footer = () => {
   return (
     <>
       <footer className="fondoBlanco letraGris">
@@ -31,3 +31,5 @@ export const Footer = () => {
     </>
   );
 };
+
+export default Footer

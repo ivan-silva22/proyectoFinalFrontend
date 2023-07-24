@@ -1,6 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
-import { Footer } from './components/common/Footer'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import  Footer  from './components/common/Footer'
+import Navegacion from "./components/common/Navegacion";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Pedidos from './components/views/Pedidos';
 import AdministradorUsuarios from './components/views/Administrador/AdministradorUsuarios';
@@ -8,11 +10,9 @@ import AdministradorProductos from './components/views/Administrador/Administrad
 import AdministradorPedidos from './components/views/Administrador/AdministradorPedidos';
 
 function App() {
-  
-
   return (
-
     <BrowserRouter>
+        <Navegacion></Navegacion>
         <Routes>
             <Route exact path="/pedidos" element={<Pedidos></Pedidos>}></Route>
             <Route exact path="/administradorProductos" element={<AdministradorProductos></AdministradorProductos>}></Route>
