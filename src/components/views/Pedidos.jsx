@@ -3,15 +3,15 @@ const Pedidos = () => {
   return (
     <Container className="my-4">
       <Row className="p-3 ">
-        <Col sm={8}>
+        <Col md={8}>
           <Row>
-            <Col>
+            <Col sm={12} md={6}>
               <Card.Img
                 variant="top"
                 src="https://images.pexels.com/photos/8280002/pexels-photo-8280002.jpeg"
               />
             </Col>
-            <Col>
+            <Col sm={12} md={6}>
               <Card.Body>
                 <Card.Title>
                   <h3>Empanadas de Carne</h3>
@@ -30,13 +30,13 @@ const Pedidos = () => {
           </Row>
           <hr />
           <Row>
-            <Col>
+            <Col sm={12} md={6}>
               <Card.Img
                 variant="top"
                 src="https://images.pexels.com/photos/8280002/pexels-photo-8280002.jpeg"
               />
             </Col>
-            <Col>
+            <Col sm={12} md={6}>
               <Card.Body>
                 <Card.Title>
                   <h3>Empanadas de Carne</h3>
@@ -55,11 +55,12 @@ const Pedidos = () => {
           </Row>
           
         </Col>
-        <Col sm={4}>
-          <Card style={{ width: "18rem" }} className="border border-2 py-2">
-            <Card.Body className="mb-5">
+        <Col md={4}>
+          <Card className="border border-2">
+            <Card.Body>
               <Card.Title>
                 <h4>Resumen del pedido</h4>
+                <hr />
               </Card.Title>
               <Card.Text>
                 <h5>Total: $5000</h5>
