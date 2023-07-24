@@ -1,5 +1,6 @@
 import './App.css'
-import { Footer } from './components/common/Footer'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import  Footer  from './components/common/Footer'
 import Navegacion from "./components/common/Navegacion";
 
 function App() {
