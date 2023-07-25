@@ -6,7 +6,8 @@ import Inicio from "./components/views/Inicio";
 import Navegacion from "./components/common/Navegacion";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Pedidos from "./components/views/Pedidos";
-import AdministradorProductos from "./components/views/Administrador/AdministradorProductos";
+import RutasProtegidas from "./components/routes/RutasProtegidas";
+import RutasAdministrador from "./components/routes/RutasAdministrador";
 
 function App() {
   return (
@@ -17,7 +18,9 @@ function App() {
         <Route exact path="/pedidos" element={<Pedidos></Pedidos>}></Route>
         <Route
           path="/administrador/*"
-          element={<AdministradorProductos></AdministradorProductos>}
+          element={<RutasProtegidas>
+              <RutasAdministrador></RutasAdministrador>           
+          </RutasProtegidas>}
         ></Route>
       </Routes>
       <Footer></Footer>
