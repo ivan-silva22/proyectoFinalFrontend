@@ -1,6 +1,7 @@
 import { Table, Container, Button, Row, Col } from "react-bootstrap";
 import ItemProducto from "../Producto/ItemProducto";
 import { useEffect, useState } from "react";
+import { consultarListaProductos } from "../../helpers/queries";
 
  
 
@@ -8,7 +9,9 @@ const AdministradorProductos = () => {
   const [listaProductos, setListaProductos] = useState([]);
 
   useEffect(() =>{
-    
+    consultarListaProductos().then((respuesta) =>{
+      setListaProductos(respuesta)
+    })
   }, [])
   return (
     <Container>
@@ -43,7 +46,8 @@ const AdministradorProductos = () => {
               </thead>
               <tbody>
               {
-              <ItemProducto></ItemProducto>
+                listaProductos.map((producto, index) => <ItemProducto key={producto.id} producto={producto} posicion={index}></ItemProducto>)
+              
               }
               </tbody>
             </Table>
