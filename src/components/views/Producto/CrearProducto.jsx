@@ -23,7 +23,7 @@ const CrearProducto = () => {
           <Form.Label>Precio*</Form.Label>
           <Form.Control
             type="number"
-            placeholder="Ej: 1000"
+            placeholder="Ej: 2500"
         
           />
           <Form.Text className="text-danger">

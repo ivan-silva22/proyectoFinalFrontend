@@ -1,4 +1,4 @@
-import { Navbar, Container, Nav, Button, NavDropdown } from 'react-bootstrap';
+import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
 import '../../css/navbar.css';
 
 const Navegacion = () => {
