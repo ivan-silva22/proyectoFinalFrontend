@@ -30,10 +30,32 @@ const Inicio = () => {
       </Carousel>
 
       <Container>
-        <h1 className="display-4">Nuestros Productos</h1>
+        <h1 className="display-5 mt-5 letraDancing text-center">Nuestra Carta</h1>
+        <hr />
+        <h1 className=" mt-1 letraDancing">PASTAS</h1>
         <hr />
         <Row>
           <CardProducto></CardProducto>
+          <CardProducto></CardProducto>
+          <CardProducto></CardProducto>
+        </Row>
+        <h1 className=" mt-1 letraDancing">PIZZAS</h1>
+        <hr />
+        <Row>
+          <CardProducto></CardProducto>
+          <CardProducto></CardProducto>
+          <CardProducto></CardProducto>
+        </Row>
+        <h1 className=" mt-1 letraDancing">POSTRES</h1>
+        <hr />
+        <Row>
+          <CardProducto></CardProducto>
+          <CardProducto></CardProducto>
+          <CardProducto></CardProducto>
+        </Row>
+        <h1 className=" mt-1 letraDancing">BEBIDAS</h1>
+        <hr />
+        <Row>
           <CardProducto></CardProducto>
           <CardProducto></CardProducto>
           <CardProducto></CardProducto>

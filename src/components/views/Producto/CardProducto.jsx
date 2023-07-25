@@ -8,17 +8,21 @@ const CardProducto = () => {
     <Card>
       <Card.Img 
       variant="top" 
-      src="holder.js/100px180" 
+      src="../../src/assets/ñoquis1.jpg" 
       />
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+        <Card.Title className='letraDancing'>Gnocchi del Nonno </Card.Title>
+        <Card.Text >
+         Ñoquis caseros servidos con una exquisita salsa de cuatro quesos y toques de albahaca fresca.
         </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+        <Button variant="primary">Servir</Button>
+        <footer className="blockquote-footer text-end">
+             <cite title="Source Title">$ 2100</cite>
+          </footer>
       </Card.Body>
     </Card>
+
+    
     </Col>
 
   );
