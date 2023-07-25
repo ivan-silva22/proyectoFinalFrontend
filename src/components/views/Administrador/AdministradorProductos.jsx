@@ -1,4 +1,5 @@
 import { Table, Container, Button, Row, Col } from "react-bootstrap";
+import ItemProducto from "../Producto/ItemProducto";
 
 const AdministradorProductos = () => {
   return (
@@ -33,43 +34,9 @@ const AdministradorProductos = () => {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Empanadas de carne</td>
-                  <td>
-                    alguna descripcion
-                  </td>
-                  <td>
-                    https://images.pexels.com/photos/8280002/pexels-photo-8280002.jpeg
-                  </td>
-                  <td>$2500</td>
-                  <td>Entrada</td>
-                  <td>
-                    <div className="d-flex justify-content-around">
-                      <Button variant="warning">Editar</Button>
-                      <Button variant="danger">Eliminar</Button>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Flan casero</td>
-                  <td>
-                    alguna descripcion
-                  </td>
-                  <td>
-                    {" "}
-                    https://images.pexels.com/photos/8280002/pexels-photo-8280002.jpeg
-                  </td>
-                  <td>$2000</td>
-                  <td>Postre</td>
-                  <td>
-                    <div className="d-flex justify-content-around">
-                      <Button variant="warning">Editar</Button>
-                      <Button variant="danger">Eliminar</Button>
-                    </div>
-                  </td>
-                </tr>
+              {
+              <ItemProducto></ItemProducto>
+              }
               </tbody>
             </Table>
           </Container>
