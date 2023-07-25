@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
-import { Footer } from './components/common/Footer'
+// import { Footer } from './components/common/Footer'
 // import EditarProducto from './components/views/Producto/EditarProducto';
 // import Pedidos from './components/views/Pedidos';
 // import AdministradorPedidios from './components/views/Administrador/AdministradorPedidos';
