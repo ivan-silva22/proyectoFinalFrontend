@@ -1,7 +1,7 @@
 import "../../css/footer.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
-export const Footer = () => {
+const Footer = () => {
   return (
     <>
       <footer className="fondoBlanco letraGris">
@@ -15,15 +15,21 @@ export const Footer = () => {
           </article>
 
           <article className="text-center letraAmatic fw-bold ">
-            <h1> Quienes somos </h1> 
+            <h1> Quienes somos </h1>
             <h1> Contactate con nosotros </h1>
           </article>
-          <article className="text-center letraAmatic fw-bold">
+          <article className="text-center letraAmatic fw-bold d-flex flex-row justify-content-center gap-5">
             <h1> Segui nuestras redes sociales </h1>
-            <div className="iconos text-center">
-              <i className="bi bi-instagram linkSolo" ><span>Instagram</span> </i>   
-              <i className="bi bi-facebook pt-1 linkSolo "><span>Facebook</span></i>
-              <i class="bi bi-whatsapp linkSolo "> <span>Whatsapp</span> </i>
+            <div className="iconos text-center ">
+              <i className="bi bi-instagram linkSolo">
+                <span>Instagram</span>{" "}
+              </i>
+              <i className="bi bi-facebook pt-1 linkSolo">
+                <span>Facebook</span>
+              </i>
+              <i className="bi bi-whatsapp linkSolo">
+                <span>Whatsapp</span>{" "}
+              </i>
             </div>
           </article>
         </section>
@@ -31,3 +37,5 @@ export const Footer = () => {
     </>
   );
 };
+
+export default Footer;
