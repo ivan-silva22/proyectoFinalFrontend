@@ -1,7 +1,15 @@
 import { Table, Container, Button, Row, Col } from "react-bootstrap";
 import ItemProducto from "../Producto/ItemProducto";
+import { useEffect, useState } from "react";
+
+ 
 
 const AdministradorProductos = () => {
+  const [listaProductos, setListaProductos] = useState([]);
+
+  useEffect(() =>{
+    
+  }, [])
   return (
     <Container>
       <Row>
