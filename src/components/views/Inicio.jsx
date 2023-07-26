@@ -32,37 +32,20 @@ const Inicio = () => {
       <Container>
         <h1 className="display-5 mt-5 letraDancing text-center">Nuestra Carta</h1>
         <hr />
-        <h1 className=" mt-1 letraDancing">Pastas</h1>
+        <h1 className=" mt-1 letraDancing">Recomendados</h1>
         <hr />
+
         <Row>
           <CardProducto></CardProducto>
-          <CardProducto></CardProducto>
-          <CardProducto></CardProducto>
         </Row>
-        <h1 className=" mt-1 letraDancing">Pizzas</h1>
-        <hr />
-        <Row>
-          <CardProducto></CardProducto>
-          <CardProducto></CardProducto>
-          <CardProducto></CardProducto>
-        </Row>
-        <h1 className=" mt-1 letraDancing">Postres</h1>
-        <hr />
-        <Row>
-          <CardProducto></CardProducto>
-          <CardProducto></CardProducto>
-          <CardProducto></CardProducto>
-        </Row>
-        <h1 className=" mt-1 letraDancing">Bebidas</h1>
-        <hr />
-        <Row>
-          <CardProducto></CardProducto>
-          <CardProducto></CardProducto>
-          <CardProducto></CardProducto>
-        </Row>
+
       </Container>
+        
     </section>
   );
 };
 
 export default Inicio;
+          
+          
+          
