@@ -1,6 +1,7 @@
 import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
 import '../../css/navbar.css';
 
+
 const Navegacion = () => {
   return (
     <Navbar bg="ligth" expand="lg" className="bg-body-primary">
@@ -16,7 +17,7 @@ const Navegacion = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto letraAmatic fw-bold fs-3">
             <Nav.Link href="#inicio">Inicio</Nav.Link>
-            <Nav.Link href="#registro">Registrate</Nav.Link>
+            <Nav.Link href="/Registro">Registrate</Nav.Link>
             <NavDropdown title="Administrar" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Productos</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Pedidos</NavDropdown.Item>
