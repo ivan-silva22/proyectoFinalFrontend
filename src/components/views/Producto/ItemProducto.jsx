@@ -16,7 +16,7 @@ const ItemProducto = ({ producto, posicion }) => {
                   <td>{producto.categoria}</td>
                   <td>
                     <div className="d-flex justify-content-around">
-                      <Button variant="warning">Editar</Button>
+                      <Link variant="warning" to={'/administrador/editarproducto/'+producto.id}>Editar</Link>
                       <Button variant="danger">Eliminar</Button>
                     </div>
                   </td>

@@ -26,3 +26,13 @@ export const consultarListaProductos = async () =>{
         console.log(error);
     }
 }
+
+export const consultarProducto = async (id) =>{
+    try {
+        const respuesta = await fetch(URLProducto+'/'+id);
+        const producto = await respuesta.json();
+        return producto; 
+    } catch (error) {
+        console.log(error);
+    }
+}
