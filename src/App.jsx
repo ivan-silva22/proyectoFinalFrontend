@@ -17,7 +17,7 @@ function App() {
         <Inicio></Inicio>
                 <Routes>
             <Route exact path="/pedidos" element={<Pedidos></Pedidos>}></Route>
-            <Route exact path="/administradorProductos" element={<AdministradorProductos></AdministradorProductos>}></Route>
+            <Route exact path="/administradorproductos" element={<AdministradorProductos></AdministradorProductos>}></Route>
             <Route exact path="/administradorusuarios" element={<AdministradorUsuarios></AdministradorUsuarios>}></Route>
             <Route exact path="/Administradorpedidos" element={<AdministradorPedidos></AdministradorPedidos>}></Route>
         </Routes>
