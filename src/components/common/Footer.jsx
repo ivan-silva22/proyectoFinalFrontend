@@ -15,21 +15,30 @@ const Footer = () => {
           </article>
 
           <article className="text-center letraAmatic fw-bold ">
-            <h1> Quienes somos </h1>
-            <h1> Contactate con nosotros </h1>
+            <h4> Quienes somos </h4>
+            <h4> Contactate con nosotros </h4>
+            <h4> Encontranos en </h4>
+         
+            <div>
+            <i class="bi bi-geo-alt-fill">25 de mayo 2600</i>
+            </div>
+            
           </article>
-          <article className="text-center letraAmatic fw-bold d-flex flex-row justify-content-center gap-5">
-            <h1> Segui nuestras redes sociales </h1>
-            <div className="iconos text-center ">
-              <i className="bi bi-instagram linkSolo">
-                <span>Instagram</span>{" "}
-              </i>
-              <i className="bi bi-facebook pt-1 linkSolo">
-                <span>Facebook</span>
-              </i>
-              <i className="bi bi-whatsapp linkSolo">
-                <span>Whatsapp</span>{" "}
-              </i>
+          <article className="text-center letraAmatic fw-bold mt-4 mb-2">
+            <h3 className="mb-3"> Segui nuestras redes sociales </h3>
+            <div className="d-flex justify-content-between align-items-center">
+              <div>
+                <i className="bi bi-instagram linkSolo"></i>
+                <p>Instagram</p>
+              </div>
+              <div>
+                <i className="bi bi-facebook linkSolo"></i>
+                <p>Facebook</p>
+              </div>
+              <div>
+                <i className="bi bi-whatsapp linkSolo"></i>
+                <p>Whatsapp</p>
+              </div>
             </div>
           </article>
         </section>
