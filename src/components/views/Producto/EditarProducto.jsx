@@ -1,19 +1,20 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useParams, useNavigate } from "react-router-dom";
-import { consultarProducto } from "../../helpers/queries";
+import { consultarProducto, consultaEditarProducto } from "../../helpers/queries";
 import Swal from "sweetalert2";
+import { useEffect } from "react";
 
 const EditarProducto = () => {
   const {
     register,
     handleSubmit,
     formState: {errors},
-    reset
     setValue
   } = useForm();
 
   const {id} = useParams();
+  const navegacion = useNavigate();
 
   useEffect(()=>{
     consultarProducto(id).then((respuesta)=>{
@@ -24,7 +25,7 @@ const EditarProducto = () => {
         setValue('categoria', respuesta.categoria);
         setValue('descripcion', respuesta.descripcion);
       }else{
-        Swal.fire('Ocurrio un error', `El producto ${productoNuevo.nombreProducto} no fue creado correctamente`, 'error');
+        Swal.fire('Ocurrio un error', `El producto no fue creado correctamente`, 'error');
       }
     })
   }, [])
