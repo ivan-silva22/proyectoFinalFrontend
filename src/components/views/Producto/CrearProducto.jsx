@@ -2,9 +2,6 @@ import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { consultarAgregarProducto } from "../../helpers/queries";
 import Swal from 'sweetalert2'
-import { useForm } from "react-hook-form";
-import { consultarAgregarProducto } from "../../helpers/queries";
-import Swal from 'sweetalert2'
 
 const CrearProducto = () => {
 

@@ -1,6 +1,6 @@
 import { Table, Container, Button, Row, Col } from "react-bootstrap";
 
-const AdministradorPedidos = () => {
+const AdministradorPedidios = () => {
     return (
         <Container>
       <Row>
@@ -18,19 +18,25 @@ const AdministradorPedidos = () => {
           <thead>
             <tr>
                   <th>#</th>
-                  <th>Usuario</th>
-                  <th>Fecha</th>
                   <th>Producto</th>
+                  <th>Descripción</th>
+                  <th>URL de Imagen</th>
+                  <th>Precio</th>
                   <th>Estado</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>1</td>
-              <td>admin</td>
-              <td>27/07/2023</td>
-              <td>Pizza</td>
-              <td>Pendiente</td>
+              <td>Empanadas</td>
+              <td>alguna descripcion</td>
+              <td> https://images.pexels.com/photos/8280002/pexels-photo-8280002.jpeg</td>
+              <td>$2400</td>
+              <td>
+                <div className="d-flex justify-content-around">
+                  <Button variant="warning">Pendiente</Button>
+                </div>
+              </td>
             </tr>
           </tbody>
         </Table>
@@ -41,4 +47,4 @@ const AdministradorPedidos = () => {
     );
 };
 
-export default AdministradorPedidos;
+export default AdministradorPedidios;
