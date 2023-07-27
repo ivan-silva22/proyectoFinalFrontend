@@ -30,6 +30,7 @@ const AdministradorProductos = () => {
                   <th>URL de Imagen</th>
                   <th>Precio</th>
                   <th>Categoria</th>
+                  <th>Estado</th>
                   <th>Opciones</th>
                 </tr>
               </thead>
