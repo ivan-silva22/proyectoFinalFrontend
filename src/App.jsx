@@ -18,12 +18,13 @@ function App() {
         
                 <Routes>
 
-            <Route exact path="/pedidos" element={<Pedidos></Pedidos>}></Route>
+            
             <Route exact path="/" element={<Inicio></Inicio>}></Route>
             <Route exact path="/administradorproductos" element={<AdministradorProductos></AdministradorProductos>}></Route>
             <Route exact path="/administradorusuarios" element={<AdministradorUsuarios></AdministradorUsuarios>}></Route>
             <Route exact path="/Administradorpedidos" element={<AdministradorPedidos></AdministradorPedidos>}></Route>
             <Route exact path="/Registro" element={<Registro></Registro>}></Route> 
+            <Route exact path="/pedidos" element={<Pedidos></Pedidos>}></Route>
         </Routes>
         <Footer></Footer>
       </BrowserRouter>
