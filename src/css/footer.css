@@ -1,0 +1,44 @@
+footer {
+    width: 100%;
+  }
+  
+  .logo {
+    object-fit:contain;
+    width: 200px; 
+    height: 150px;
+  }
+  
+  .ordenFooter {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  } 
+
+  .iconos {
+    justify-content: space-around;
+    width: 10px; 
+    padding-top: 10px;
+    font-size: large;
+  }
+
+
+  .linkSolo {
+    text-decoration: none;
+  
+  }
+  .linkSolo:hover {
+    color: rgb(219, 15, 32);
+  }
+
+  
+  /* Dispositivos Small */
+  
+  @media all and (max-width: 767px) {
+    .ordenFooter {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      margin: 2%;
+    }
+  }
