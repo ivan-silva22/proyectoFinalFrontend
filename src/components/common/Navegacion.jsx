@@ -19,13 +19,14 @@ const Navegacion = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto letraAmatic fw-bold fs-3">
             <NavLink end className={'nav-item nav-link'} to ={'/'} >Inicio</NavLink>
-            <NavLink end className={'nav-item nav-link'} to ={'Registro'}>Registrate</NavLink>
             <NavDropdown title="Administrar" id="basic-nav-dropdown">
               <NavLink end className={'nav-item nav-link'} to ={'administradorproductos'}>Productos</NavLink>
               <NavLink end className={'nav-item nav-link'} to ={'Administradorpedidos'}>Pedidos</NavLink>
               <NavLink end className={'nav-item nav-link'} to ={'administradorusuarios'}>Usuarios</NavLink>
               <NavDropdown.Divider />
             </NavDropdown>
+            <NavLink end className={'nav-item nav-link'} to ={'Registro'}>Registrate</NavLink>
+            <NavLink end className={'nav-item nav-link'} to ={'pedidos'}>Pedidos</NavLink>
             <NavLink end className={'nav-item nav-link'} to ={''}>Login</NavLink>
           </Nav>
         </Navbar.Collapse>
