@@ -51,3 +51,4 @@ export const consultaEditarProducto = async (producto, id) =>{
         console.log(error);
     }
 }
+
