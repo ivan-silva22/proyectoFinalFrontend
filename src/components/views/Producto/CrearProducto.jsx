@@ -2,6 +2,9 @@ import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { consultarAgregarProducto } from "../../helpers/queries";
 import Swal from 'sweetalert2'
+import { useForm } from "react-hook-form";
+import { consultarAgregarProducto } from "../../helpers/queries";
+import Swal from 'sweetalert2'
 
 const CrearProducto = () => {
 
@@ -102,6 +105,19 @@ const CrearProducto = () => {
           />
           <Form.Text className="text-danger">
           {errors.imagen?.message}
+          </Form.Text>
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formImagen">
+          <Form.Label>Estado*</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Ej: Activo"
+            {...register("estado", {
+              required: "El estado es obligatorio",
+            })}
+          />
+          <Form.Text className="text-danger">
+          {errors.estado?.message}
           </Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formPrecio">
