@@ -27,7 +27,7 @@ const Navegacion = () => {
             </NavDropdown>
             <NavLink end className={'nav-item nav-link'} to ={'Registro'}>Registrate</NavLink>
             <NavLink end className={'nav-item nav-link'} to ={'pedidos'}>Pedidos</NavLink>
-            <NavLink end className={'nav-item nav-link'} to ={''}>Login</NavLink>
+            <NavLink end className={'nav-item nav-link'} to ={'Login'}>Login</NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>
