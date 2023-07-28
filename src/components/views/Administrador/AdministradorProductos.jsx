@@ -1,7 +1,8 @@
-import { Table, Container, Button, Row, Col } from "react-bootstrap";
+import { Table, Container, Row, Col } from "react-bootstrap";
 import ItemProducto from "../Producto/ItemProducto";
 import { useEffect, useState } from "react";
 import { consultarListaProductos } from "../../helpers/queries";
+import { Link } from "react-router-dom";
 
  
 
@@ -19,18 +20,18 @@ const AdministradorProductos = () => {
         <Col md={2} className="mt-5 py-4">
           <h4>Opciones</h4>
           <div className="d-flex flex-column ">
-            <Button variant="primary">Productos</Button>
-            <Button variant="primary" className="my-2">
+            <Link className="btn btn-primary" to='/administradorproductos'>Productos</Link>
+            <Link className="btn btn-primary my-2" to='/administradorusuarios'>
               Usuarios
-            </Button>
-            <Button variant="primary">Pedidos</Button>
+            </Link>
+            <Link className="btn btn-primary" to='/administradorpedidos'>Pedidos</Link>
           </div>
         </Col>
         <Col md={10}>
           <Container>
             <h1 className="display-5">Productos del menú</h1>
             <div className="my-2">
-              <Button variant="primary">Agregar</Button>
+              <Link className="btn btn-primary" to='/administradorproductos/crearproducto'>Agregar</Link>
             </div>
             <Table striped bordered hover size="sm" responsive="sm">
               <thead>

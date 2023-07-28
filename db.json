@@ -1,13 +1,29 @@
 {
-    "productos": [
-      { "id": 1, "nombreProducto": "Lasagna", "precio": 2500, "descripcion": "alguna descripcion", "categoria": "pasta", "imagen": "https://images.pexels.com/photos/6046493/pexels-photo-6046493.jpeg"},
-      { "id": 2, "nombreProducto": "Lasagna", "precio": 2500, "descripcion": "alguna descripcion", "categoria": "pasta", "imagen": "https://images.pexels.com/photos/6046493/pexels-photo-6046493.jpeg"}
-
-    ],
-    "usuarios": [
-      { "id": 1, "nombreUsuario": "admin", "email": "admin@rollingcode.com", "possword": "123456" }
-    ],
-    "pedidos": [
-        { "nombrePedido": "Lasagna", "descripcion": "alguna descripcion", "imagen": "https://images.pexels.com/photos/6046493/pexels-photo-6046493.jpeg", "precio": 2500, "estado": "pendiente"}
-    ]
-  }
+  "productos": [
+    {
+      "id": 1,
+      "nombreProducto": "Lasagna",
+      "precio": 2500,
+      "descripcion": "alguna descripcion",
+      "categoria": "pasta",
+      "imagen": "https://images.pexels.com/photos/6046493/pexels-photo-6046493.jpeg"
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "nombreUsuario": "admin",
+      "email": "admin@rollingcode.com",
+      "possword": "123456"
+    }
+  ],
+  "pedidos": [
+    {
+      "nombrePedido": "Lasagna",
+      "descripcion": "alguna descripcion",
+      "imagen": "https://images.pexels.com/photos/6046493/pexels-photo-6046493.jpeg",
+      "precio": 2500,
+      "estado": "pendiente"
+    }
+  ]
+}

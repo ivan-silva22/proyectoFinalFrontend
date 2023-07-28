@@ -1,4 +1,5 @@
 import { Table, Container, Button, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const AdministradorUsuarios = () => {
   return (
@@ -7,9 +8,9 @@ const AdministradorUsuarios = () => {
         <Col md={2} className="mt-5 py-4">
           <h4>Opciones</h4>
           <div className="d-flex flex-column ">
-            <Button variant="primary">Productos</Button>
-            <Button variant="primary" className="my-2">Usuarios</Button>
-            <Button variant="primary">Pedidos</Button>
+            <Link className="btn btn-primary" to='/administradorproductos'>Productos</Link>
+            <Link className="btn btn-primary my-2" to='/administradorusuarios'>Usuarios</Link>
+            <Link className="btn btn-primary" to='/administradorpedidios'>Pedidos</Link>
           </div>
         </Col>
         <Col md={10}><Container>

@@ -49,9 +49,10 @@ const ItemProducto = ({ producto,setListaProductos, posicion }) => {
                   </td>
                   <td>${producto.precio}</td>
                   <td>{producto.categoria}</td>
+                  <td>Activo</td>
                   <td>
                     <div className="d-flex justify-content-around">
-                      <Link variant="warning" to={'/administrador/editarproducto/'+producto.id}>Editar</Link>
+                      <Link variant="warning" className='btn btn-warning' to={'/administrador/editarproducto/'+producto.id}>Editar</Link>
                       <Button variant="danger" onClick={borrarProducto}>Eliminar</Button>
                     </div>
                   </td>
