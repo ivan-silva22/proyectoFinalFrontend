@@ -10,6 +10,7 @@ import AdministradorUsuarios from './components/views/Administrador/Administrado
 import AdministradorProductos from './components/views/Administrador/AdministradorProductos';
 import AdministradorPedidos from './components/views/Administrador/AdministradorPedidos';
 import Registro from './components/views/Registro';
+import Login from './components/views/Login';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route exact path="/Administradorpedidos" element={<AdministradorPedidos></AdministradorPedidos>}></Route>
             <Route exact path="/Registro" element={<Registro></Registro>}></Route> 
             <Route exact path="/pedidos" element={<Pedidos></Pedidos>}></Route>
+            <Route exact path="/login" element={<Login></Login>}></Route>
         </Routes>
         <Footer></Footer>
       </BrowserRouter>
