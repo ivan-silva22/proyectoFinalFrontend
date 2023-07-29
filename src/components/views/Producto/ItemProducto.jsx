@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 import { consultarBorrarProducto, consultarListaProductos } from "../../helpers/queries";
 
 const ItemProducto = ({ producto,setListaProductos, posicion }) => {
-
+  console.log(producto)
   const borrarProducto = () =>{
     Swal.fire({
       title: `¿Esta seguro de borrar el producto ${producto.nombreProducto}?`,
@@ -16,7 +16,7 @@ const ItemProducto = ({ producto,setListaProductos, posicion }) => {
       confirmButtonText: 'Borrar',
       cancelButtonText: 'Cancelar',
     }).then((result) =>{
-      if(result.isConfirmed()){
+      if(result.isConfirmed){
         consultarBorrarProducto(producto.id).then((respuesta)=>{
           if(respuesta.status === 200){
             Swal.fire(
@@ -49,10 +49,10 @@ const ItemProducto = ({ producto,setListaProductos, posicion }) => {
                   </td>
                   <td>${producto.precio}</td>
                   <td>{producto.categoria}</td>
-                  <td>Activo</td>
+                  <td>{producto.estado}</td>
                   <td>
                     <div className="d-flex justify-content-around">
-                      <Link variant="warning" className='btn btn-warning' to={'/administrador/editarproducto/'+producto.id}>Editar</Link>
+                      <Link variant="warning" className='btn btn-warning' to={'/administradorproductos/editarproducto/'+producto.id}>Editar</Link>
                       <Button variant="danger" onClick={borrarProducto}>Eliminar</Button>
                     </div>
                   </td>

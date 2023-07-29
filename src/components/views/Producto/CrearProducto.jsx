@@ -104,7 +104,7 @@ const CrearProducto = () => {
           {errors.imagen?.message}
           </Form.Text>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formImagen">
+        <Form.Group className="mb-3" controlId="formEstado">
           <Form.Label>Estado*</Form.Label>
           <Form.Control
             type="text"
@@ -117,7 +117,7 @@ const CrearProducto = () => {
           {errors.estado?.message}
           </Form.Text>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formPrecio">
+        <Form.Group className="mb-3" controlId="formCategoria">
           <Form.Label>Categoria*</Form.Label>
           <Form.Select
             {...register("categoria", {

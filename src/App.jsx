@@ -6,27 +6,33 @@ import Inicio from "./components/views/Inicio";
 import Navegacion from "./components/common/Navegacion";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Pedidos from './components/views/Pedidos';
-import AdministradorUsuarios from './components/views/Administrador/AdministradorUsuarios';
-import AdministradorProductos from './components/views/Administrador/AdministradorProductos';
-import AdministradorPedidos from './components/views/Administrador/AdministradorPedidos';
 import Registro from './components/views/Registro';
 import Login from './components/views/Login';
+import { useState } from 'react';
+import RutasAdministrador from './components/routes/RutasAdministrador';
+import RutasProtegidas from './components/routes/RutasProtegidas';
 
 function App() {
+
+  const usuario = JSON.parse(sessionStorage.getItem('usuario')) || {}; 
+  const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
+
   return (
     <BrowserRouter>
-        <Navegacion></Navegacion>
+        <Navegacion usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado}></Navegacion>
         
                 <Routes>
 
             
             <Route exact path="/" element={<Inicio></Inicio>}></Route>
-            <Route exact path="/administradorproductos" element={<AdministradorProductos></AdministradorProductos>}></Route>
-            <Route exact path="/administradorusuarios" element={<AdministradorUsuarios></AdministradorUsuarios>}></Route>
-            <Route exact path="/Administradorpedidos" element={<AdministradorPedidos></AdministradorPedidos>}></Route>
+            <Route exact path="/administradorproductos/*" element={
+              <RutasProtegidas>
+                <RutasAdministrador></RutasAdministrador>
+              </RutasProtegidas>}>  
+            </Route>
             <Route exact path="/Registro" element={<Registro></Registro>}></Route> 
             <Route exact path="/pedidos" element={<Pedidos></Pedidos>}></Route>
-            <Route exact path="/login" element={<Login></Login>}></Route>
+            <Route exact path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}></Login>}></Route>
         </Routes>
         <Footer></Footer>
       </BrowserRouter>

@@ -15,7 +15,7 @@ const AdministradorProductos = () => {
     })
   }, [])
   return (
-    <Container>
+    <Container className="mainSection">
       <Row>
         <Col md={2} className="mt-5 py-4">
           <h4>Opciones</h4>
@@ -48,7 +48,7 @@ const AdministradorProductos = () => {
               </thead>
               <tbody>
               {
-                listaProductos.map((producto, index) => <ItemProducto key={producto.id} producto={producto} posicion={index}></ItemProducto>)
+                listaProductos.map((producto, index) => <ItemProducto key={producto.id} producto={producto} posicion={index} setListaProductos={setListaProductos}></ItemProducto>)
               
               }
               </tbody>

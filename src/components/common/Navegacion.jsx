@@ -1,9 +1,17 @@
-import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
+import { Navbar, Container, Nav, Button } from 'react-bootstrap';
 import '../../css/navbar.css';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 
 
-const Navegacion = () => {
+const Navegacion = ({usuarioLogueado, setUsuarioLogueado}) => {
+  const navegacion = useNavigate();
+
+  const logout = ()=>{
+    setUsuarioLogueado({});
+    sessionStorage.removeItem('usuario');
+    navegacion('/Login');
+  }
+
   return (
     <Navbar bg="ligth" expand="lg" className="bg-body-primary">
       <Container>
@@ -19,15 +27,23 @@ const Navegacion = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto letraAmatic fw-bold fs-3">
             <NavLink end className={'nav-item nav-link'} to ={'/'} >Inicio</NavLink>
-            <NavDropdown title="Administrar" id="basic-nav-dropdown">
-              <NavLink end className={'nav-item nav-link'} to ={'administradorproductos'}>Productos</NavLink>
-              <NavLink end className={'nav-item nav-link'} to ={'Administradorpedidos'}>Pedidos</NavLink>
-              <NavLink end className={'nav-item nav-link'} to ={'administradorusuarios'}>Usuarios</NavLink>
-              <NavDropdown.Divider />
-            </NavDropdown>
-            <NavLink end className={'nav-item nav-link'} to ={'Registro'}>Registrate</NavLink>
-            <NavLink end className={'nav-item nav-link'} to ={'pedidos'}>Pedidos</NavLink>
-            <NavLink end className={'nav-item nav-link'} to ={'Login'}>Login</NavLink>
+            <NavLink end className={'nav-item nav-link'} to ={'/pedidos'}>Pedidos</NavLink>
+            
+            {
+                (usuarioLogueado.nombreUsuario)?(
+                  <>
+                  <NavLink end className={'nav-item nav-link'} to ={'/administradorproductos'}>Productos</NavLink>
+                  <Button  variant="outline-secondary" onClick={logout}>Logout</Button>
+                  </>
+                ):(
+                  <>
+                    <NavLink end className={'nav-item nav-link'} to ={'/Registro'}>Registrate</NavLink>
+                    <NavLink end className={'nav-item nav-link'} to ={'/Login'}>Login</NavLink>
+                  </>
+                )
+                  
+            }
+            
           </Nav>
         </Navbar.Collapse>
       </Container>

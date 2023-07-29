@@ -1,8 +1,20 @@
 import Carousel from "react-bootstrap/Carousel";
 import CardProducto from "../views/Producto/CardProducto";
 import { Container, Row } from "react-bootstrap";
+import { useState, useEffect } from "react";
+import { consultarListaProductos } from "../helpers/queries";
+
 
 const Inicio = () => {
+
+  const [productos, setProductos] = useState([]);
+  
+  useEffect(()=>{
+    consultarListaProductos().then((respuesta)=>{
+      setProductos(respuesta)
+    })
+  },[])
+
   return (
     <section className="mainSection">
       <Carousel>
@@ -36,7 +48,10 @@ const Inicio = () => {
         <hr />
 
         <Row>
-          <CardProducto></CardProducto>
+          {
+            productos.map((producto) => <CardProducto key={producto.id} producto={producto}></CardProducto>)
+          }
+          
         </Row>
 
       </Container>

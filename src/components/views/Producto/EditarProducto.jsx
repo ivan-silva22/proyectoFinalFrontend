@@ -1,7 +1,7 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useParams, useNavigate } from "react-router-dom";
-import { consultarProducto, consultaEditarProducto } from "../../helpers/queries";
+import { consultarProducto, consultarEditarProducto } from "../../helpers/queries";
 import Swal from "sweetalert2";
 import { useEffect } from "react";
 
@@ -31,7 +31,7 @@ const EditarProducto = () => {
   }, [])
 
   const onSubmit = (productoEditado) =>{
-    consultaEditarProducto(productoEditado, id).then((respuesta)=>{
+    consultarEditarProducto(productoEditado, id).then((respuesta)=>{
       if(respuesta && respuesta.status === 200){
         Swal.fire('Producto editado', `El producto ${productoEditado.nombreProducto} fue editado correctamente`, 'success');
         navegacion('/administrador');

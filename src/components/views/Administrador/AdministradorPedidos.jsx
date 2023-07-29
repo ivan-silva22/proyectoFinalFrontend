@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const AdministradorPedidios = () => {
     return (
-        <Container>
+        <Container className="mainSection">
       <Row>
         <Col md={2} className="mt-5 py-4">
           <h4>Opciones</h4>

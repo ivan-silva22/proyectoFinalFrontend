@@ -1,9 +1,9 @@
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+import { Button, Form, Container } from 'react-bootstrap';
 
 function Registro() {
   return (
-    <Form className='container m-5 p-5 letraDancing fs-5'>
+    <Container className="mainSection">
+      <Form className='container m-5 p-5 letraDancing fs-5'>
 
 <Form.Group className="mb-3" controlId="formNombre">
         <Form.Label>Nombre</Form.Label>
@@ -40,6 +40,7 @@ function Registro() {
         Enviar
       </Button>
     </Form>
+    </Container>
   );
 }
 

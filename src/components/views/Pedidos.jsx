@@ -1,7 +1,7 @@
 import { Button, Card, Container, Row, Col } from "react-bootstrap";
 const Pedidos = () => {
   return (
-    <Container className="my-4">
+    <Container className="my-4 mainSection">
       <Row className="p-3 ">
         <Col md={8}>
           <Row>
