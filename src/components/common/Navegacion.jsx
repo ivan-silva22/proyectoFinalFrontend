@@ -32,7 +32,7 @@ const Navegacion = ({usuarioLogueado, setUsuarioLogueado}) => {
             {
                 (usuarioLogueado.nombreUsuario)?(
                   <>
-                  <NavLink end className={'nav-item nav-link'} to ={'/administradorproductos'}>Productos</NavLink>
+                  <NavLink end className={'nav-item nav-link'} to ={'/administradorproductos'}>Administrador</NavLink>
                   <Button  variant="outline-secondary" onClick={logout}>Logout</Button>
                   </>
                 ):(
