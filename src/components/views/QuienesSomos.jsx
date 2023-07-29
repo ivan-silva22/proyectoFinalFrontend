@@ -1,7 +1,7 @@
-import "../../css/acercaNosotros.css"
+import "../../css/quienesSomos.css"
 import "../../css/App.css"
 import "../src/assets"
-const acercaNosotros = () => {
+const QuienesSomos = () => {
     return (
       
         <main className="acercaNosotros fondoBlanco letraGris">
@@ -84,4 +84,4 @@ const acercaNosotros = () => {
 
 };
 
-export default acercaNosotros;
+export default QuienesSomos;
