@@ -8,6 +8,15 @@
       "estado": "activo",
       "categoria": "pastas",
       "id": 1
+    },
+    {
+      "nombreProducto": "Lasagna",
+      "precio": "3000",
+      "descripcion": "Lasagna",
+      "imagen": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg",
+      "estado": "activo",
+      "categoria": "pastas",
+      "id": 2
     }
   ],
   "usuarios": [
