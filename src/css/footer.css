@@ -3,15 +3,16 @@ footer {
   }
   
   .logo {
-    width: 300px; 
-    height: 300px;
+    object-fit:contain;
+    width: 200px; 
+    height: 150px;
   }
   
   .ordenFooter {
-    display: flex;
+  display: flex;
   justify-content: space-around;
   align-items: center;
-  }
+  } 
 
   .iconos {
     justify-content: space-around;
