@@ -1,83 +1,86 @@
-import { Button, Form, Container } from 'react-bootstrap';
-import { login } from "../helpers/queries";
-import { useForm} from 'react-hook-form';
-import Swal from 'sweetalert2';
+import { Form, Button, Container, Card } from "react-bootstrap";
+import { useForm } from "react-hook-form";
+import { iniciarSesion } from "../helpers/queries";
+import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
+
+
 const Login = ({setUsuarioLogueado}) => {
-  const { register, handleSubmit, formState: { errors} } = useForm();
+  const { register, handleSubmit, formState: {errors}, reset} = useForm(); 
   const navegacion = useNavigate();
 
   const onSubmit = (usuario)=>{
     console.log(usuario);
-    login(usuario).then((respuesta)=>{
-      if(respuesta){
-        sessionStorage.setItem('usuario', JSON.stringify(respuesta.nombreUsuario));
-        Swal.fire(
-          'Bienvenido',
-          `${respuesta.nombreUsuario} iniciaste sesion correctamente`,
-          'success'
-        );
-        setUsuarioLogueado(respuesta);
-        navegacion('/administradorproductos');
+    iniciarSesion(usuario).then((respuesta)=>{
+      if(respuesta && respuesta.status === 200){
+        sessionStorage.setItem('usuario', JSON.stringify(respuesta));
+        setUsuarioLogueado(respuesta)
+        reset();
+        navegacion('/administrador');
       }else{
+        //mostrar un mensaje de error
         Swal.fire(
           'Error',
-          'Email o password incorrecto ',
+          'El email o password son incorrectos',
           'error'
         )
       }
     })
   }
 
-    return (
-        <Container className="mainSection">
-          <Form className='container m-5 p-5 letraDancing fs-5' onSubmit={handleSubmit(onSubmit)}>
-            
+  return (
+    <Container className="mainSection letraDancing h5 fs-5">
+      <Card className="my-5">
+        <Card.Header as="h5">Login</Card.Header>
+        <Card.Body>
+          <Form onSubmit={handleSubmit(onSubmit)}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Email</Form.Label>
-              <Form.Control type="email" placeholder="Enter email"
-               {...register('email', {
-                required: 'El email es un dato obligatorio',
+              <Form.Control
+                type="email"
+                placeholder="Ingrese un email"
+               { ...register('email', {
+                required:'El email es un dato obligatorio',
                 pattern:{
-                  value: /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
-                  message: 'El email debe cumplir con el formato nombre@dominio.com'
+                  value: /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=? ^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a -z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
+                  message:'El email debe tener el siguiente formato mail@dominio.com'
                 }
-               })} 
+               } ) }
               />
-              <Form.Text className="text-muted">
-              {errors.email?.message}
-              </Form.Text>
+             <Form.Text className="text-danger">
+               {errors.email?.message}
+             </Form.Text>
             </Form.Group>
-      
+
             <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Contraseña</Form.Label>
-              <Form.Control type="password" placeholder="Password"
-               {...register('password', {
-                required: 'El password es un dato obligatorio',
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Password"
+               {...register('password',{
+                required: 'El password es obligatorio',
                 pattern:{
                   value: /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/,
-                  message: 'El password debe tener entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula.'
+                  message: 'El password debe tener al entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula. No puede tener otros símbolos.'
                 }
                })}
-               />
-               <Form.Text className="text-danger">
-                 {errors.password?.message}
-               </Form.Text>
+              />
+            <Form.Text className="text-danger">
+               {errors.password?.message}
+            </Form.Text>
             </Form.Group>
-      
-            
             <Button variant="primary" type="submit">
-              Enviar
+              Ingresar
             </Button>
           </Form>
-        </Container>
-   
-      );
+        </Card.Body>
+      </Card>
+    </Container>
+  );
 };
 
 export default Login;
-
         
         
               
