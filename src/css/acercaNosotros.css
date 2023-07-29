@@ -1,0 +1,26 @@
+.presentacion{
+    color: rgb(38, 23, 23);
+    margin-left: 10px;
+}
+.acercaNosotros{
+    min-height: 100vh;
+    background-image: url(../assets/);
+    background-size: cover;
+
+}
+.participantes{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    display: block;
+    margin: 10% auto;
+    border: auto;
+    padding: 7p 0px;
+    object-fit: cover;
+}
+.borde{
+    border: rgb(187, 160, 160) solid 5px;
+}
+.conteiner {
+    margin-top: 89px;
+  }
