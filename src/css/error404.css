@@ -7,21 +7,14 @@
   }
   p {
     font-size: 18px;
-    color: #8a8a8a;
     margin-bottom: 40px;
   }
   
   p a {
     display: inline-block;
     padding: 12px 24px;
-    font-family: "Roboto Condensed", sans-serif;
-    background-color: grey;
-    color: #fff;
     text-decoration: none;
     border-radius: 4px;
     transition: background-color 0.3s ease;
   }
   
-  p a:hover {
-    background-color: #222;
-  }
