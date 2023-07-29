@@ -8,11 +8,11 @@ const acercaNosotros = () => {
         <section className="conteiner">
           <article className="presentacion">
             <hr />
-            <p className="h1 text-center text-bg-dark d-flex justify-content-center">
+            <p className="h1 text-center letraAmatic d-flex justify-content-center">
               Nuestro objetivo como equipo al hacer esta aplicacion es el de hacer una app donde los clientes de un restaurante puedan eligir distintos platos y puedan hacer su pedido. Ojala les guste muestra App y nuestro menu :D
             </p>
             <hr />
-            <p className="h2 text-center text-bg-dark d-flex justify-content-center">
+            <p className="h2 text-center letraAmatic d-flex justify-content-center">
               Los integrantes son
             </p>
           </article>
@@ -24,7 +24,7 @@ const acercaNosotros = () => {
                 alt="Belu Bell" 
               />
               <div className="card-body">
-                <p className="h3 text-center text-bg-dark">
+                <p className="h3 text-center letraAmatic">
                  Belu Bell
                 </p>
               </div>
@@ -36,7 +36,7 @@ const acercaNosotros = () => {
                 alt="Hugo Triunfetti"
               />
               <div className="card-body">
-                <p className="h3 text-center text-bg-dark">
+                <p className="h3 text-center letraAmatic">
                   Hugo Triunfetti
                 </p>
               </div>
@@ -48,7 +48,7 @@ const acercaNosotros = () => {
                 alt="Ivan Silva"
               />
               <div className="card-body">
-                <p className="h3 text-center text-bg-dark">
+                <p className="h3 text-center letraAmatic">
                   Ivan Silva
                 </p>
               </div>
@@ -60,7 +60,7 @@ const acercaNosotros = () => {
                 alt="Rosario Black Sleiman"
               />
               <div className="card-body">
-                <p className="h3 text-center text-bg-dark">
+                <p className="h3 text-center letraAmatic">
                   Rosario Black Sleiman
                 </p>
               </div>
@@ -72,7 +72,7 @@ const acercaNosotros = () => {
                 alt="Tomas Benjamin Quispe Navarro"
               />
               <div className="card-body">
-                <p className="h3 text-center  text-bg-dark">
+                <p className="h3 text-center  letraAmatic">
                   Tomas Benjamin Quispe Navarro
                 </p>
               </div>
