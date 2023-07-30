@@ -1,6 +1,6 @@
 import { Form, Button, Container, Card } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { iniciarSesion } from "../helpers/queries";
+import { login } from "../helpers/queries";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
@@ -11,28 +11,18 @@ const Login = ({setUsuarioLogueado}) => {
   const navegacion = useNavigate();
 
   const onSubmit = (usuario)=>{
-    console.log(usuario);
-    iniciarSesion(usuario).then((respuesta)=>{
-      if(respuesta && respuesta.status === 201){
+    login(usuario).then((respuesta)=>{
+      if(respuesta){
         sessionStorage.setItem('usuario', JSON.stringify(respuesta));
         setUsuarioLogueado(respuesta)
         reset();
         navegacion('/administradorproductos');
-<<<<<<< HEAD
-=======
-
->>>>>>> f082952f8fe0ee345529786ab20244e4edec41cc
         Swal.fire(
-          'Correcto',
-          'El inicio fue exitoso',
+          'Bienvenido',
+          `${respuesta.nombreUsuario} iniciaste sesion correctamente`,
           'success'
         )
-<<<<<<< HEAD
-=======
-
->>>>>>> f082952f8fe0ee345529786ab20244e4edec41cc
       }else{
-        //mostrar un mensaje de error
         Swal.fire(
           'Error',
           'El email o password son incorrectos',
