@@ -34,7 +34,9 @@ const Footer = () => {
             <h4> Encontranos en </h4>
 
             <div>
+
               <i className="bi bi-geo-alt-fill">25 de mayo 2600</i>
+
             </div>
           </article>
           <article className="text-center letraAmatic fw-bold mt-4 mb-2">
