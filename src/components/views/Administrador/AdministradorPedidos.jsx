@@ -1,7 +1,8 @@
 import { Table, Container, Button, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { consultarListaPedidos } from "../../helpers/queries";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import ItemPedido from "../Pedido/ItemPedido";
 
 const AdministradorPedidios = () => {
   const [listaPedidos, setListaPedidos] = useState([]);
@@ -39,13 +40,10 @@ const AdministradorPedidios = () => {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>admin</td>
-                  <td>27/07/2023</td>
-                  <td>Pizza</td>
-                  <td>Pendiente</td>
-                </tr>
+              {
+                listaPedidos.map((pedido) => <ItemPedido key={pedido.id} pedido={pedido} setListaPedidos={setListaPedidos}></ItemPedido>)
+              
+              }
               </tbody>
             </Table>
           </Container>
