@@ -22,7 +22,6 @@ const Login = ({setUsuarioLogueado}) => {
           `${respuesta.nombreUsuario} iniciaste sesion correctamente`,
           'success'
         )
-
       }else{
         Swal.fire(
           'Error',
