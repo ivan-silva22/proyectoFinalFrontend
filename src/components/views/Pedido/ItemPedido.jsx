@@ -8,11 +8,11 @@ const ItemPedido = ({ pedido, setListaPedidos }) => {
 
   return (
     <tr>
-      <td>1</td>
-      <td>admin</td>
-      <td>27/07/2023</td>
-      <td>Pizza</td>
-      <td>Pendiente</td>
+      <td>{pedido.id}</td>
+      <td>{pedido.usuario}</td>
+      <td>{pedido.fecha}</td>
+      <td>{pedido.producto}</td>
+      <td>{pedido.estado}</td>
     </tr>
   );
 };
