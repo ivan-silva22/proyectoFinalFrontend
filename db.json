@@ -25,6 +25,12 @@
       "email": "admin@rollingcode.com",
       "password": "Admin123",
       "id": 1
+    },
+    {
+      "nombreUsuario": "Hugo Triunfetti",
+      "email": "huguitotriunfetti@gmail.com",
+      "password": "Admin123",
+      "id": 2
     }
   ],
   "pedidos": [
@@ -58,7 +64,5 @@
       "producto": "Canelones",
       "estado": "pendiente"
     }
-
-
   ]
 }
