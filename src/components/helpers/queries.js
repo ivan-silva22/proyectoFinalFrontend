@@ -1,5 +1,6 @@
 const URLProducto = import.meta.env.VITE_API_PRODUCTO;
 const URLUsuario = import.meta.env.VITE_API_USUARIO;
+const URLPedido = import.meta.env.VITE_API_PEDIDO;
 
 
 
@@ -81,6 +82,16 @@ export const consultarBorrarProducto = async (id) =>{
         });
         return respuesta;
     }catch(error){
+        console.log(error);
+    }
+}
+
+export const consultarListaPedidos = async () =>{
+    try {
+        const respuesta = await fetch(URLPedido);
+        const listaPedidos = await respuesta.json();
+        return listaPedidos; 
+    } catch (error) {
         console.log(error);
     }
 }
