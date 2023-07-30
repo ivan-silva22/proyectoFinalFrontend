@@ -1,7 +1,6 @@
 import { Form, Button, Container, Card } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-// import { iniciarSesion } from "../helpers/queries";
-import { login } from "../helpers/queries";
+import { iniciarSesion } from "../helpers/queries";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
@@ -13,8 +12,8 @@ const Login = ({setUsuarioLogueado}) => {
 
   const onSubmit = (usuario)=>{
     console.log(usuario);
-    login(usuario).then((respuesta)=>{
-      if(respuesta && respuesta.status === 200){
+    iniciarSesion(usuario).then((respuesta)=>{
+      if(respuesta && respuesta.status === 201){
         sessionStorage.setItem('usuario', JSON.stringify(respuesta));
         setUsuarioLogueado(respuesta)
         reset();
