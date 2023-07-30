@@ -29,10 +29,9 @@
   ],
   "pedidos": [
     {
-      "nombrePedido": "Lasagna",
-      "descripcion": "alguna descripcion",
-      "imagen": "https://images.pexels.com/photos/6046493/pexels-photo-6046493.jpeg",
-      "precio": 2500,
+      "id": 1,
+      "fecha": "29/07/2023",
+      "productos": "Pizza",
       "estado": "pendiente"
     }
   ]
