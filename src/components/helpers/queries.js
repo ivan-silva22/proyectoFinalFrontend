@@ -4,7 +4,7 @@ const URLUsuario = import.meta.env.VITE_API_USUARIO;
 
 export const iniciarSesion = async (usuario)=>{
     try{
-        const respuesta = await fetch(URL_usuario,{
+        const respuesta = await fetch(URLUsuario,{
             method: "POST",
             headers:{
                 "Content-Type": "application/json"
