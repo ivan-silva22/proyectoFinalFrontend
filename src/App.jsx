@@ -11,6 +11,8 @@ import Login from './components/views/Login';
 import { useState } from 'react';
 import RutasAdministrador from './components/routes/RutasAdministrador';
 import RutasProtegidas from './components/routes/RutasProtegidas';
+import Error404 from './components/views/error404';
+
 
 function App() {
 
@@ -33,6 +35,7 @@ function App() {
             <Route exact path="/Registro" element={<Registro></Registro>}></Route> 
             <Route exact path="/pedidos" element={<Pedidos></Pedidos>}></Route>
             <Route exact path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}></Login>}></Route>
+            <Route path='*' element={<Error404></Error404>}></Route>
         </Routes>
         <Footer></Footer>
       </BrowserRouter>

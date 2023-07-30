@@ -5,6 +5,11 @@
     padding: 40px 40px;
     text-align: center;
   }
+
+.error img{
+  width: 50%;
+}  
+
   p {
     font-size: 18px;
     margin-bottom: 40px;
@@ -18,3 +23,9 @@
     transition: background-color 0.3s ease;
   }
   
+
+@media screen and (max-width: 1023px){
+  .error img{
+    width: 100%;
+  }
+}

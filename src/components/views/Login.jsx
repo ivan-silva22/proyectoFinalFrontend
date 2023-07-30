@@ -1,7 +1,6 @@
 import { Form, Button, Container, Card } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-// import { iniciarSesion } from "../helpers/queries";
-import { login } from "../helpers/queries";
+import { iniciarSesion } from "../helpers/queries";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
@@ -19,11 +18,19 @@ const Login = ({setUsuarioLogueado}) => {
         setUsuarioLogueado(respuesta)
         reset();
         navegacion('/administradorproductos');
+<<<<<<< HEAD
+=======
+
+>>>>>>> 046c1e74a3dab5402189bf730b19dddf1218176b
         Swal.fire(
           'Correcto',
           'El inicio fue exitoso',
           'success'
         )
+<<<<<<< HEAD
+=======
+
+>>>>>>> 046c1e74a3dab5402189bf730b19dddf1218176b
       }else{
         //mostrar un mensaje de error
         Swal.fire(
