@@ -18,11 +18,13 @@ const Login = ({setUsuarioLogueado}) => {
         setUsuarioLogueado(respuesta)
         reset();
         navegacion('/administradorproductos');
+
         Swal.fire(
           'Correcto',
           'El inicio fue exitoso',
           'success'
         )
+
       }else{
         //mostrar un mensaje de error
         Swal.fire(
