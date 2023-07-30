@@ -5,6 +5,9 @@ import { consultarListaPedidos } from "../../helpers/queries";
 
 const ItemPedido = ({ pedido, setListaPedidos }) => {
   console.log(pedido);
+const cambiarEstado = ()=> {
+    console.log(cambiarEstado);
+}
 
   return (
     <tr>
@@ -12,7 +15,13 @@ const ItemPedido = ({ pedido, setListaPedidos }) => {
       <td>{pedido.usuario}</td>
       <td>{pedido.fecha}</td>
       <td>{pedido.producto}</td>
-      <td>{pedido.estado}</td>
+      <td>
+        <div className="d-flex justify-content-around">
+          <Button variant="warning" onClick={cambiarEstado}>
+            {pedido.estado}
+          </Button>
+        </div>
+      </td>
     </tr>
   );
 };
