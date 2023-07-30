@@ -16,27 +16,24 @@ const Footer = () => {
           </article>
 
           <article className="text-center letraAmatic fw-bold ">
-          <div>
-                <NavLink end className={"nav-item nav-link"} to={"/*"}>
-                  {" "}
-                  <p>Quienes somos</p>
-                </NavLink>
-              </div>
-            
             <div>
-                <NavLink end className={"nav-item nav-link"} to={"/*"}>
-                  {" "}
-                  <p>Contactate con nosotros</p>
-                </NavLink>
-              </div>
-            
+              <NavLink end className={"nav-item nav-link"} to={"/*"}>
+                {" "}
+                <h4>Quienes somos</h4>
+              </NavLink>
+            </div>
+
+            <div>
+              <NavLink end className={"nav-item nav-link"} to={"/erro404"}>
+                {" "}
+                <h4>Contactate con nosotros</h4>
+              </NavLink>
+            </div>
 
             <h4> Encontranos en </h4>
 
             <div>
-
               <i className="bi bi-geo-alt-fill">25 de mayo 2600</i>
-
             </div>
           </article>
           <article className="text-center letraAmatic fw-bold mt-4 mb-2">
@@ -45,7 +42,7 @@ const Footer = () => {
               <div>
                 <NavLink end className={"nav-item nav-link"} to={"/*"}>
                   {" "}
-                  <i className="bi bi-instagram linkSolo"></i>
+                  <i className="bi bi-instagram linkSolo iconos"></i>
                   <p>Instagram</p>
                 </NavLink>
               </div>
@@ -53,14 +50,14 @@ const Footer = () => {
               <div>
                 <NavLink end className={"nav-item nav-link"} to={"/*"}>
                   {" "}
-                  <i className="bi bi-facebook linkSolo"></i>
+                  <i className="bi bi-facebook linkSolo iconos"></i>
                   <p>Facebook</p>
                 </NavLink>
               </div>
               <div>
                 <NavLink end className={"nav-item nav-link"} to={"/*"}>
                   {" "}
-                  <i className="bi bi-whatsapp linkSolo"></i>
+                  <i className="bi bi-whatsapp linkSolo iconos"></i>
                   <p>Whatsapp</p>
                 </NavLink>
               </div>
