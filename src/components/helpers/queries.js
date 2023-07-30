@@ -95,3 +95,18 @@ export const consultarListaPedidos = async () =>{
         console.log(error);
     }
 }
+
+export const consultaAgregarUsuario = async (usuario) => {
+    try {
+      const respuesta = await fetch(URLUsuario, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(usuario),
+      });
+      return respuesta;
+    } catch (error) {
+      console.log(error);
+    }
+  };
