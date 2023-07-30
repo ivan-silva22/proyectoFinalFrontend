@@ -13,12 +13,17 @@ const Login = ({setUsuarioLogueado}) => {
 
   const onSubmit = (usuario)=>{
     console.log(usuario);
-    login(usuario).then((respuesta)=>{
-      if(respuesta && respuesta.status === 200){
+    iniciarSesion(usuario).then((respuesta)=>{
+      if(respuesta && respuesta.status === 201){
         sessionStorage.setItem('usuario', JSON.stringify(respuesta));
         setUsuarioLogueado(respuesta)
         reset();
         navegacion('/administradorproductos');
+        Swal.fire(
+          'Correcto',
+          'El inicio fue exitoso',
+          'success'
+        )
       }else{
         //mostrar un mensaje de error
         Swal.fire(
