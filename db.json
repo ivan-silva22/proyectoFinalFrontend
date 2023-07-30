@@ -30,9 +30,35 @@
   "pedidos": [
     {
       "id": 1,
+      "fecha": "21/07/2023",
+      "producto": "Pizza",
+      "estado": "pendiente"
+    },
+    {
+      "id": 2,
+      "fecha": "23/07/2023",
+      "producto": "Calzonne",
+      "estado": "entregado"
+    },
+    {
+      "id": 3,
+      "fecha": "25/07/2023",
+      "producto": "Lasagna",
+      "estado": "pendiente"
+    },
+    {
+      "id": 4,
+      "fecha": "26/07/2023",
+      "producto": "Ñoquis",
+      "estado": "entregado"
+    },
+    {
+      "id": 5,
       "fecha": "29/07/2023",
-      "productos": "Pizza",
+      "producto": "Canelones",
       "estado": "pendiente"
     }
+
+
   ]
 }
