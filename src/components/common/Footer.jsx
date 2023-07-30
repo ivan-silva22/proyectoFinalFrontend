@@ -17,14 +17,14 @@ const Footer = () => {
 
           <article className="text-center letraAmatic fw-bold ">
           <div>
-                <NavLink end className={"nav-item nav-link"} to={"/error404"}>
+                <NavLink end className={"nav-item nav-link"} to={"/*"}>
                   {" "}
                   <p>Quienes somos</p>
                 </NavLink>
               </div>
             
             <div>
-                <NavLink end className={"nav-item nav-link"} to={"/error404"}>
+                <NavLink end className={"nav-item nav-link"} to={"/*"}>
                   {" "}
                   <p>Contactate con nosotros</p>
                 </NavLink>
@@ -41,7 +41,7 @@ const Footer = () => {
             <h3 className="mb-3"> Segui nuestras redes sociales </h3>
             <div className="d-flex justify-content-between align-items-center">
               <div>
-                <NavLink end className={"nav-item nav-link"} to={"/error404"}>
+                <NavLink end className={"nav-item nav-link"} to={"/*"}>
                   {" "}
                   <i className="bi bi-instagram linkSolo"></i>
                   <p>Instagram</p>
@@ -49,14 +49,14 @@ const Footer = () => {
               </div>
 
               <div>
-                <NavLink end className={"nav-item nav-link"} to={"/error404"}>
+                <NavLink end className={"nav-item nav-link"} to={"/*"}>
                   {" "}
                   <i className="bi bi-facebook linkSolo"></i>
                   <p>Facebook</p>
                 </NavLink>
               </div>
               <div>
-                <NavLink end className={"nav-item nav-link"} to={"/error404"}>
+                <NavLink end className={"nav-item nav-link"} to={"/*"}>
                   {" "}
                   <i className="bi bi-whatsapp linkSolo"></i>
                   <p>Whatsapp</p>
