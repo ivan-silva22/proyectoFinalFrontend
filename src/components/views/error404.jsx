@@ -1,7 +1,7 @@
 import "../../css/error404.css";
-import "../../css/app.css";
 
-import error from '../../assets'
+import error from '../../assets/error404.jpg'
+
 const Error404 = () => {
     return (
       <div className="container-fluid fondoBlanco letraGris">
