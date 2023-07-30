@@ -17,7 +17,12 @@ const Login = ({setUsuarioLogueado}) => {
         sessionStorage.setItem('usuario', JSON.stringify(respuesta));
         setUsuarioLogueado(respuesta)
         reset();
-        navegacion('/administrador');
+        navegacion('/administradorproductos');
+        Swal.fire(
+          'Correcto',
+          'El inicio fue exitoso',
+          'success'
+        )
       }else{
         //mostrar un mensaje de error
         Swal.fire(
