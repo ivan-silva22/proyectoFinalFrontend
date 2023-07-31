@@ -24,10 +24,7 @@ function App() {
   return (
     <BrowserRouter>
         <Navegacion usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado}></Navegacion>
-        
-                <Routes>
-
-            
+          <Routes>
             <Route exact path="/" element={<Inicio></Inicio>}></Route>
             <Route exact path="/administradorproductos/*" element={
               <RutasProtegidas>
@@ -36,14 +33,12 @@ function App() {
             </Route>
             <Route exact path="/Registro" element={<Registro></Registro>}></Route> 
             <Route exact path="/pedidos" element={<Pedidos></Pedidos>}></Route>
+            <Route exact path='/detalle/:id' element={<DetalleProducto></DetalleProducto>}></Route>
             <Route exact path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}></Login>}></Route>
             <Route path='*' element={<Error404></Error404>}></Route>
         </Routes>
         <Footer></Footer>
-      
-
       </BrowserRouter>
-//  <DetalleProducto></DetalleProducto>
   )
 }
   
