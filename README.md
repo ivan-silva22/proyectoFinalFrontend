@@ -28,7 +28,9 @@ Se considera que solo el usuario administrador podrá administrar las diferentes
 
 Se creó el archivo .env y se agregaron las variables de entorno:
 
-- 
+- VITE_API_PRODUCTO=http://localhost:3000/productos
+- VITE_API_USUARIO=http://localhost:3000/usuarios
+- VITE_API_PEDIDO=http://localhost:3000/pedidos
 
 ## 🖥 Pasos para clonar y ejecutar la Aplicación 
 
@@ -36,7 +38,7 @@ Sigue estos pasos para clonar y ejecutar la aplicación en tu entorno local:
 
 1.  *Clonar el repositorio:* En la línea de comandos, ejecutar el comando:
 
-    git clone https://github.com/jgromerou/ej6-practico-backend.git
+    git clone https://github.com/ivan-silva22/proyectoFinalFrontend.git
     
 
 2.  *Acceder al directorio:* Ir al directorio de la aplicación clonada:

@@ -1,16 +1,39 @@
-
-
 const URLProducto = import.meta.env.VITE_API_PRODUCTO;
+const URLUsuario = import.meta.env.VITE_API_USUARIO;
+const URLPedido = import.meta.env.VITE_API_PEDIDO;
+
+
+
+export const login = async(usuario)=>{
+    try{
+        const respuesta = await fetch(URLUsuario);
+        const listaUsuarios = await respuesta.json();
+        const buscarUsuario = listaUsuarios.find((itemUsuario) => itemUsuario.email === usuario.email);
+        if(buscarUsuario){
+            if(buscarUsuario.password === usuario.password){
+                return buscarUsuario;
+            }else{
+                return null;
+            }
+        }else{
+            return null;
+        }
+       
+    }catch(error){
+        console.log(error)
+    }
+}
 
 export const consultarAgregarProducto = async (producto) =>{
     try {
         const respuesta = await fetch(URLProducto, {
             method: "POST",
-            headres: {
+            headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(producto)
         });
+        console.log(respuesta);
         return respuesta;
     } catch (error) {
         console.log(error)
@@ -37,7 +60,7 @@ export const consultarProducto = async (id) =>{
     }
 }
 
-export const consultaEditarProducto = async (producto, id) =>{
+export const consultarEditarProducto = async (producto, id) =>{
     try{
         const respuesta = await fetch(URLProducto+'/'+id, {
             method: "PUT",
@@ -51,4 +74,42 @@ export const consultaEditarProducto = async (producto, id) =>{
         console.log(error);
     }
 }
+
+
+
+export const consultarBorrarProducto = async (id) =>{
+    try{
+        const respuesta = await fetch(`${URLProducto}/${id}`, {
+            method: "DELETE"
+        });
+        return respuesta;
+    }catch(error){
+        console.log(error);
+    }
+}
+
+export const consultarListaPedidos = async () =>{
+    try {
+        const respuesta = await fetch(URLPedido);
+        const listaPedidos = await respuesta.json();
+        return listaPedidos; 
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export const consultaAgregarUsuario = async (usuario) => {
+    try {
+      const respuesta = await fetch(URLUsuario, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(usuario),
+      });
+      return respuesta;
+    } catch (error) {
+      console.log(error);
+    }
+  };
 

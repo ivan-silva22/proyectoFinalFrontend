@@ -1,7 +1,7 @@
 import { Button, Card, Container, Row, Col } from "react-bootstrap";
 const Pedidos = () => {
   return (
-    <Container className="my-4">
+    <Container className="my-4 mainSection">
       <Row className="p-3 ">
         <Col md={8}>
           <Row>
@@ -14,16 +14,16 @@ const Pedidos = () => {
             <Col sm={12} md={6}>
               <Card.Body>
                 <Card.Title>
-                  <h3>Empanadas de Carne</h3>
+                  <h3 className='letraDancing'>Empanadas de Carne</h3>
                 </Card.Title>
-                <Card.Text>
+                <Card.Text className='letraDancing'>
                   Sabrosas y calentitas, no te las podés perder. Son una
                   excelente elección como entrada para que abra el apetito
                   mientras esperamos lo que viene. Nuestra recomendación es
                   degustarlas con un delicioso malbec.
                 </Card.Text>
                 <Card.Text>
-                  <h5>Precio: $2.500</h5>
+                  <h5 className='letraDancing'>Precio: $2.500</h5>
                 </Card.Text>
               </Card.Body>
             </Col>

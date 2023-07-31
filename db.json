@@ -1,13 +1,68 @@
 {
-    "productos": [
-      { "id": 1, "nombreProducto": "Lasagna", "precio": 2500, "descripcion": "alguna descripcion", "categoria": "pasta", "imagen": "https://images.pexels.com/photos/6046493/pexels-photo-6046493.jpeg"},
-      { "id": 2, "nombreProducto": "Lasagna", "precio": 2500, "descripcion": "alguna descripcion", "categoria": "pasta", "imagen": "https://images.pexels.com/photos/6046493/pexels-photo-6046493.jpeg"}
-
-    ],
-    "usuarios": [
-      { "id": 1, "nombreUsuario": "admin", "email": "admin@rollingcode.com", "possword": "123456" }
-    ],
-    "pedidos": [
-        { "nombrePedido": "Lasagna", "descripcion": "alguna descripcion", "imagen": "https://images.pexels.com/photos/6046493/pexels-photo-6046493.jpeg", "precio": 2500, "estado": "pendiente"}
-    ]
-  }
+  "productos": [
+    {
+      "nombreProducto": "Pizza",
+      "precio": "3000",
+      "descripcion": "Pizza muzzarella",
+      "imagen": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg",
+      "estado": "activo",
+      "categoria": "pastas",
+      "id": 1
+    },
+    {
+      "nombreProducto": "Lasagna",
+      "precio": "3000",
+      "descripcion": "Lasagna",
+      "imagen": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg",
+      "estado": "activo",
+      "categoria": "pastas",
+      "id": 2
+    }
+  ],
+  "usuarios": [
+    {
+      "nombreUsuario": "admin",
+      "email": "admin@rollingcode.com",
+      "password": "Admin123",
+      "id": 1
+    },
+    {
+      "nombreUsuario": "Hugo Triunfetti",
+      "email": "huguitotriunfetti@gmail.com",
+      "password": "Admin123",
+      "id": 2
+    }
+  ],
+  "pedidos": [
+    {
+      "id": 1,
+      "fecha": "21/07/2023",
+      "producto": "Pizza",
+      "estado": "pendiente"
+    },
+    {
+      "id": 2,
+      "fecha": "23/07/2023",
+      "producto": "Calzonne",
+      "estado": "entregado"
+    },
+    {
+      "id": 3,
+      "fecha": "25/07/2023",
+      "producto": "Lasagna",
+      "estado": "pendiente"
+    },
+    {
+      "id": 4,
+      "fecha": "26/07/2023",
+      "producto": "Ñoquis",
+      "estado": "entregado"
+    },
+    {
+      "id": 5,
+      "fecha": "29/07/2023",
+      "producto": "Canelones",
+      "estado": "pendiente"
+    }
+  ]
+}
