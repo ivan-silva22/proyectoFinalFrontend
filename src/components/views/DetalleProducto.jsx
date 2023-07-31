@@ -1,7 +1,7 @@
 import { Container, Card, Row, Col } from "react-bootstrap";
 import { consultarProducto } from "../helpers/queries";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const DetalleProducto = () => {
@@ -24,7 +24,7 @@ const DetalleProducto = () => {
 
   return (
     <Container className="my-3 mainSection">
-      <Card>
+      <Card className="p-2">
         <Row>
           <Col md={6}>
             <Card.Img
@@ -34,19 +34,20 @@ const DetalleProducto = () => {
           </Col>
           <Col md={6}>
             <Card.Body>
-              <Card.Title>{producto.nombreProducto}</Card.Title>
+              <Card.Title className="letraDancing">{producto.nombreProducto}</Card.Title>
               <hr />
-              <Card.Text>
+              <Card.Text className="letraDancing">
               {producto.descripcion}
                 <br />
                 <br />
-                <span className="text-danger fw-semibold ">
+                <span className="text-danger fw-semibold">
                   Categoria:
                 </span> {producto.categoria}
                 <br />
-                <span className="text-danger fw-semibold ">Precio:</span>{" "}
+                <span className="text-danger fw-semibold">Precio:</span>{" "}
                 ${producto.precio}
               </Card.Text>
+              <Link className="btn btn-danger me-2" to={`/pedidos/${producto.id}`}>Agregar a pedido</Link>
             </Card.Body>
           </Col>
         </Row>
