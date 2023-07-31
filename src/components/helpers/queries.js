@@ -75,6 +75,8 @@ export const consultarEditarProducto = async (producto, id) =>{
     }
 }
 
+
+
 export const consultarBorrarProducto = async (id) =>{
     try{
         const respuesta = await fetch(`${URLProducto}/${id}`, {
@@ -110,3 +112,4 @@ export const consultaAgregarUsuario = async (usuario) => {
       console.log(error);
     }
   };
+

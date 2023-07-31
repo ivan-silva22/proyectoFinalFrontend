@@ -6,12 +6,14 @@ import Inicio from "./components/views/Inicio";
 import Navegacion from "./components/common/Navegacion";
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Pedidos from './components/views/Pedidos';
+import DetalleProducto from './components/views/DetalleProducto';
 import Registro from './components/views/Registro';
 import Login from './components/views/Login';
 import { useState } from 'react';
 import RutasAdministrador from './components/routes/RutasAdministrador';
 import RutasProtegidas from './components/routes/RutasProtegidas';
 import Error404 from './components/views/error404';
+
 
 
 function App() {
@@ -38,8 +40,11 @@ function App() {
             <Route path='*' element={<Error404></Error404>}></Route>
         </Routes>
         <Footer></Footer>
+      
+
       </BrowserRouter>
+//  <DetalleProducto></DetalleProducto>
   )
 }
-
+  
 export default App;
