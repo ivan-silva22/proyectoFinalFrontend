@@ -12,15 +12,26 @@ const Registro = () => {
     reset,
   } = useForm();
 
+
   const onSubmit = (usuarioNuevo) => {
     consultaAgregarUsuario(usuarioNuevo).then((respuestaCreated) => {
       console.log(respuestaCreated);
       if (respuestaCreated && respuestaCreated.status === 201) {
-        Swal.fire(
-          'Usuario creado',
-          `El usuario ${usuarioNuevo.nombreUsuario} fue creado correctamente`,
-          'success'
-        );
+        if (usuarioNuevo.tipoUsuario === "admin") {
+          // Lógica para el administrador
+          Swal.fire(
+            'Administrador creado',
+            `El administrador ${usuarioNuevo.nombreUsuario} fue creado correctamente`,
+            'success'
+          );
+        } else {
+          // Lógica para usuario común
+          Swal.fire(
+            'Usuario creado',
+            `El usuario ${usuarioNuevo.nombreUsuario} fue creado correctamente`,
+            'success'
+          );
+        }
         reset();
       } else {
         Swal.fire(
@@ -31,11 +42,23 @@ const Registro = () => {
       }
     });
   };
-
+  
   return (
     <section className="container mainSection h5 fs-4 letraDancing">
       <h1 className="display-4 mt-5">Nuevo usuario</h1>
       <hr />
+
+      <Form.Group className="mb-3" controlId="formTipoUsuario">
+  <Form.Label>Tipo de usuario*</Form.Label>
+  <Form.Control as="select" {...register("tipoUsuario")}>
+    <option value="comun">Usuario Común</option>
+    <option value="admin">Administrador</option>
+  </Form.Control>
+</Form.Group>
+
+
+
+
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Form.Group className="mb-3" controlId="formNombreUsuario">
           <Form.Label>Nombre de usuario*</Form.Label>
@@ -104,5 +127,14 @@ const Registro = () => {
 };
 
 export default Registro;
+
+
+
+
+
+  
+
+
+
       
 
