@@ -1,6 +1,5 @@
 import "../../css/quienesSomos.css"
-import "../../css/App.css"
-import "../src/assets"
+
 const QuienesSomos = () => {
     return (
       
