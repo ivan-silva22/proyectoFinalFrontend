@@ -1,22 +1,56 @@
 {
   "productos": [
     {
-      "nombreProducto": "Pizza",
-      "precio": "3000",
-      "descripcion": "Pizza muzzarella",
-      "imagen": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg",
-      "estado": "activo",
-      "categoria": "pastas",
-      "id": 1
-    },
-    {
       "nombreProducto": "Lasagna",
       "precio": "3000",
-      "descripcion": "Lasagna",
-      "imagen": "https://images.pexels.com/photos/1146760/pexels-photo-1146760.jpeg",
-      "estado": "activo",
+      "descripcion": "Capas de pasta intercaladas con salsa boloñesa y bechamel.",
+      "imagen": "https://images.pexels.com/photos/5864346/pexels-photo-5864346.jpeg",
       "categoria": "pastas",
       "id": 2
+    },
+    {
+      "nombreProducto": "Ravioli",
+      "precio": "3000",
+      "descripcion": "Pasta rellena en forma de cuadrados o círculos, a menudo rellena de carne, queso, espinacas o calabaza.",
+      "imagen": "https://images.pexels.com/photos/8601684/pexels-photo-8601684.jpeg",
+      "categoria": "pastas",
+      "id": 3
+    },
+    {
+      "nombreProducto": "Spaghetti",
+      "precio": "3500",
+      "descripcion": "Uno de los tipos de pasta más conocidos y consumidos en todo el mundo. Se sirve con una variedad de salsas, desde marinara hasta boloñesa.",
+      "imagen": "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg",
+      "estado": "No disponible",
+      "categoria": "pastas",
+      "id": 4
+    },
+    {
+      "nombreProducto": "Tiramisú",
+      "precio": "2500",
+      "descripcion": "Un postre icónico hecho con capas de bizcochos empapados en café, alternados con una crema de mascarpone y espolvoreados con cacao en polvo.",
+      "imagen": "https://images.pexels.com/photos/10170013/pexels-photo-10170013.jpeg",
+      "estado": "Disponible",
+      "categoria": "postres",
+      "id": 5
+    },
+    {
+      "nombreProducto": "Cannoli",
+      "precio": "3100",
+      "descripcion": "Tubos de masa frita crujiente rellenos de una mezcla dulce de ricotta y azúcar. A menudo, los extremos de los cannoli están adornados con trocitos de frutas confitadas o chispas de chocolate.",
+      "imagen": "https://images.pexels.com/photos/7845112/pexels-photo-7845112.jpeg",
+      "estado": "Disponible",
+      "categoria": "postres",
+      "id": 6
+    },
+    {
+      "nombreProducto": "Torta della Nonna",
+      "precio": "4000",
+      "descripcion": "\"Pastel de la abuela\" en italiano, es un pastel de crema de almendra y crema pastelera, a menudo adornado con piñones en la parte superior.",
+      "imagen": "https://images.pexels.com/photos/140831/pexels-photo-140831.jpeg",
+      "estado": "No disponible",
+      "categoria": "postres",
+      "id": 7
     }
   ],
   "usuarios": [
@@ -25,12 +59,6 @@
       "email": "admin@rollingcode.com",
       "password": "Admin123",
       "id": 1
-    },
-    {
-      "nombreUsuario": "Hugo Triunfetti",
-      "email": "hernan@gmail.com",
-      "password": "Hh12345678",
-      "id": 2
     }
   ],
   "pedidos": [

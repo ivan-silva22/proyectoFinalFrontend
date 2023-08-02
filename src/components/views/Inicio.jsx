@@ -4,6 +4,8 @@ import { Container, Row } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import { consultarListaProductos } from "../helpers/queries";
 
+// json-server --watch db.json --port 3000
+
 
 const Inicio = () => {
 
@@ -43,9 +45,7 @@ const Inicio = () => {
 
       <Container>
         <h1 className="display-5 mt-5 letraDancing text-center">Nuestra Carta</h1>
-        <hr />
-        <h1 className=" mt-1 letraDancing">Recomendados</h1>
-        <hr />
+        
 
         <Row>
           {

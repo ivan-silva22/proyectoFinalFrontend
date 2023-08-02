@@ -11,10 +11,10 @@ const Pedidos = () => {
                 src="https://images.pexels.com/photos/8280002/pexels-photo-8280002.jpeg"
               />
             </Col>
-            <Col sm={12} md={6}>
+            <Col sm={12} md={6} className="letraDancing">
               <Card.Body>
                 <Card.Title>
-                  <h3 className='letraDancing'>Empanadas de Carne</h3>
+                  <h3>Empanadas de Carne</h3>
                 </Card.Title>
                 <Card.Text className='letraDancing'>
                   Sabrosas y calentitas, no te las podés perder. Son una
@@ -36,7 +36,7 @@ const Pedidos = () => {
                 src="https://images.pexels.com/photos/8280002/pexels-photo-8280002.jpeg"
               />
             </Col>
-            <Col sm={12} md={6}>
+            <Col sm={12} md={6} className="letraDancing">
               <Card.Body>
                 <Card.Title>
                   <h3>Empanadas de Carne</h3>
@@ -55,7 +55,7 @@ const Pedidos = () => {
           </Row>
           
         </Col>
-        <Col md={4}>
+        <Col md={4} className="letraDancing">
           <Card className="border border-2">
             <Card.Body>
               <Card.Title>

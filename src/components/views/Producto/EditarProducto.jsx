@@ -41,12 +41,12 @@ const EditarProducto = () => {
      })
   }
     return (
-        <section className="container mainSection">
+        <section className="container mainSection letraDancing">
       <h1 className="display-4 mt-5">Editar producto</h1>
       <hr />
-      <Form onSubmit={handleSubmit(onSubmit)}>
+      <Form onSubmit={handleSubmit(onSubmit)} className="fs-4">
         <Form.Group className="mb-3" controlId="formNombreProducto">
-          <Form.Label>Producto*</Form.Label>
+          <Form.Label>Producto</Form.Label>
           <Form.Control
             type="text"
             placeholder="Ej: Lasagna"
@@ -67,7 +67,7 @@ const EditarProducto = () => {
           </Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formPrecio">
-          <Form.Label>Precio*</Form.Label>
+          <Form.Label>Precio</Form.Label>
           <Form.Control
             type="number"
             placeholder="Ej: 1000"
@@ -88,7 +88,7 @@ const EditarProducto = () => {
           </Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formDescripcion">
-          <Form.Label>Descripcion*</Form.Label>
+          <Form.Label>Descripcion</Form.Label>
           <Form.Control
             type="text"
             placeholder="Ej: Lasagna rellena de jamón..."
@@ -109,7 +109,7 @@ const EditarProducto = () => {
           </Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formImagen">
-          <Form.Label>Imagen URL*</Form.Label>
+          <Form.Label>Imagen URL</Form.Label>
           <Form.Control
             type="text"
             placeholder="Ej: https://www.pexels.com/es-es/vans-en-blanco-y-negro-fuera-de-la-decoracion-para-colgar-en-la-pared-1230679/"
@@ -122,7 +122,7 @@ const EditarProducto = () => {
           </Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formPrecio">
-          <Form.Label>Categoria*</Form.Label>
+          <Form.Label>Categoria</Form.Label>
           <Form.Select
              {...register("categoria", {
               required: "La categoria es obligatoria",

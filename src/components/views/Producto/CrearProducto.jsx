@@ -23,12 +23,12 @@ const CrearProducto = () => {
       })
     }
     return (
-        <section className="container mainSection">
+        <section className="container mainSection letraDancing fs-4">
       <h1 className="display-4 mt-5">Nuevo producto</h1>
       <hr />
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Form.Group className="mb-3" controlId="formNombreProducto">
-          <Form.Label>Producto*</Form.Label>
+          <Form.Label>Producto</Form.Label>
           <Form.Control
             type="text"
             placeholder="Ej: Lasagna"
@@ -50,7 +50,7 @@ const CrearProducto = () => {
           </Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formPrecio">
-          <Form.Label>Precio*</Form.Label>
+          <Form.Label>Precio</Form.Label>
           <Form.Control
             type="number"
             placeholder="Ej: 2500"
@@ -71,7 +71,7 @@ const CrearProducto = () => {
           </Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formDescripcion">
-          <Form.Label>Descripcion*</Form.Label>
+          <Form.Label>Descripcion</Form.Label>
           <Form.Control
             type="text"
             placeholder="Ej: Lasagna rellena de jamón..."
@@ -92,7 +92,7 @@ const CrearProducto = () => {
           </Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formImagen">
-          <Form.Label>Imagen URL*</Form.Label>
+          <Form.Label>Imagen URL</Form.Label>
           <Form.Control
             type="text"
             placeholder="Ej: https://www.pexels.com/es-es/vans-en-blanco-y-negro-fuera-de-la-decoracion-para-colgar-en-la-pared-1230679/"
@@ -105,7 +105,7 @@ const CrearProducto = () => {
           </Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formEstado">
-          <Form.Label>Estado*</Form.Label>
+          <Form.Label>Estado</Form.Label>
           <Form.Control
             type="text"
             placeholder="Ej: Activo"
@@ -118,7 +118,7 @@ const CrearProducto = () => {
           </Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formCategoria">
-          <Form.Label>Categoria*</Form.Label>
+          <Form.Label>Categoria</Form.Label>
           <Form.Select
             {...register("categoria", {
               required: "La categoria es obligatoria",
