@@ -48,20 +48,14 @@ const Registro = () => {
       <h1 className="display-4 mt-5">Nuevo usuario</h1>
       <hr />
 
-      <Form.Group className="mb-3" controlId="formTipoUsuario">
-  <Form.Label>Tipo de usuario*</Form.Label>
-  <Form.Control as="select" {...register("tipoUsuario")}>
-    <option value="comun">Usuario Común</option>
-    <option value="admin">Administrador</option>
-  </Form.Control>
-</Form.Group>
+      
 
 
 
 
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Form.Group className="mb-3" controlId="formNombreUsuario">
-          <Form.Label>Nombre de usuario*</Form.Label>
+          <Form.Label>Nombre de usuario</Form.Label>
           <Form.Control
             type="text"
             placeholder="Ej: juan123"
@@ -83,7 +77,7 @@ const Registro = () => {
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formEmail">
-          <Form.Label>Email*</Form.Label>
+          <Form.Label>Email</Form.Label>
           <Form.Control
             type="email"
             placeholder="Ej: ejemplo@correo.com"
@@ -101,7 +95,7 @@ const Registro = () => {
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formPassword">
-          <Form.Label>Contraseña*</Form.Label>
+          <Form.Label>Contraseña</Form.Label>
           <Form.Control
             type="password"
             placeholder="Ej: ********"
