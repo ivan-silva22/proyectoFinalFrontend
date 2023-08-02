@@ -1,54 +1,64 @@
-import { Table, Container, Row, Col } from "react-bootstrap";
+
+import { useState, useEffect } from "react";
+import { Table, Button } from "react-bootstrap";
+import ItemPedido from "../Pedido/ItemPedido";
 import { Link } from "react-router-dom";
 import { consultarListaPedidos } from "../../helpers/queries";
-import { useEffect, useState } from "react";
-import ItemPedido from "../Pedido/ItemPedido";
 
-const AdministradorPedidios = () => {
-  const [listaPedidos, setListaPedidos] = useState([]);
+const AdministradorPedidos = () => {
+  const [pedidos, setPedidos] = useState([]);
 
   useEffect(() => {
-    consultarListaPedidos().then((respuesta) => {
-      setListaPedidos(respuesta);
-    });
+    consultarListaPedidos()
+      .then((repuesta) => {
+        setPedidos(repuesta);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
 
   return (
-    <Container className="mainSection">
-      <Row>
-        <Col md={2} className="mt-5 py-4">
-          <h4>Opciones</h4>
-          <div className="d-flex flex-column ">
-          <Link className="btn btn-primary" to='/administradorproductos/'>Productos</Link>
-          <Link className="btn btn-primary my-2" to='/administradorproductos/usuarios'>Usuarios</Link>
-          <Link className="btn btn-primary" to='/administradorproductos/pedidos'>Pedidos</Link>
+    <div className="container mainSection">
+      <section>
+        <div className="d-flex justify-content-between align-items-center flex-column">
+          <h1 className="text-center  fs-1 mt-md-4 mt-lg-5 mb-2">
+            Administrar Pedidos
+          </h1>
+
+          <div className="mb-3">
+            <Button
+              className="btnAgregarPedido"
+              as={Link}
+              to={"/administrar/pedidos/agregar-pedido"}
+            >
+              Agregar nuevo pedido
+            </Button>
           </div>
-        </Col>
-        <Col md={10}>
-          <Container>
-            <h1 className="display-5">Pedidos</h1>
-            <Table striped bordered hover size="sm" responsive="sm">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Usuario</th>
-                  <th>Fecha</th>
-                  <th>Producto</th>
-                  <th>Estado</th>
-                </tr>
-              </thead>
-              <tbody>
-              {
-                listaPedidos.map((pedido) => <ItemPedido key={pedido.id} pedido={pedido} setListaPedidos={setListaPedidos}></ItemPedido>)
-              
-              }
-              </tbody>
-            </Table>
-          </Container>
-        </Col>
-      </Row>
-    </Container>
+        </div>
+
+        <Table responsive striped bordered hover>
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>NombreProducto</th>
+              <th>Estado</th>
+              <th>precioTotal</th>
+            </tr>
+          </thead>
+          <tbody>
+            {pedidos.map((pedido) => (
+              <ItemPedido
+                key={pedido._id}
+                pedido={pedido}
+                setPedidos={setPedidos}
+              ></ItemPedido>
+            ))}
+          </tbody>
+        </Table>
+      </section>
+    </div>
   );
 };
 
-export default AdministradorPedidios;
+export default AdministradorPedidos;

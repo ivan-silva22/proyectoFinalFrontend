@@ -1,6 +1,5 @@
 import "../../css/quienesSomos.css"
-import "../../css/App.css"
-import "../src/assets"
+// import "../src/assets"
 const QuienesSomos = () => {
     return (
       
@@ -9,7 +8,7 @@ const QuienesSomos = () => {
           <article className="presentacion">
             <hr />
             <p className="h1 text-center letraAmatic d-flex justify-content-center">
-              Nuestro objetivo como equipo al hacer esta aplicacion es el de hacer una app donde los clientes de un restaurante puedan eligir distintos platos y puedan hacer su pedido. Ojala les guste muestra App y nuestro menu :D
+            En Trattoria Tucumana, la pasión por la pasta es nuestra razón de ser, y esperamos compartir esta pasión contigo a través de cada exquisito bocado que pruebes. ¡Ven y únete a nosotros para disfrutar de una experiencia gastronómica auténtica y deliciosa! ¡Buon appetito!
             </p>
             <hr />
             <p className="h2 text-center letraAmatic d-flex justify-content-center">

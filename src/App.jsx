@@ -13,6 +13,7 @@ import { useState } from 'react';
 import RutasAdministrador from './components/routes/RutasAdministrador';
 import RutasProtegidas from './components/routes/RutasProtegidas';
 import Error404 from './components/views/error404';
+import QuienesSomos from './components/views/QuienesSomos';
 
 
 
@@ -32,9 +33,10 @@ function App() {
               </RutasProtegidas>}>  
             </Route>
             <Route exact path="/Registro" element={<Registro></Registro>}></Route> 
-            <Route exact path="/pedidos" element={<Pedidos></Pedidos>}></Route>
+            <Route exact path="/pedidos/:id" element={<Pedidos></Pedidos>}></Route>
             <Route exact path='/detalle/:id' element={<DetalleProducto></DetalleProducto>}></Route>
             <Route exact path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}></Login>}></Route>
+            <Route exact path="/quienessomos" element={<QuienesSomos></QuienesSomos>}></Route>
             <Route path='*' element={<Error404></Error404>}></Route>
         </Routes>
         <Footer></Footer>
