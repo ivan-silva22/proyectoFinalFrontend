@@ -110,6 +110,5 @@ export const consultaAgregarUsuario = async (usuario) => {
       return respuesta;
     } catch (error) {
       console.log(error);
-    }
-  };
-
+  }
+};

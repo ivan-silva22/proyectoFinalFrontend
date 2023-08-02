@@ -17,7 +17,7 @@ const Footer = () => {
 
           <article className="text-center letraAmatic fw-bold ">
             <div>
-              <NavLink end className={"nav-item nav-link"} to={"/*"}>
+              <NavLink end className={"nav-item nav-link"} to={"/quienessomos"}>
                 {" "}
                 <h4>Quienes somos</h4>
               </NavLink>

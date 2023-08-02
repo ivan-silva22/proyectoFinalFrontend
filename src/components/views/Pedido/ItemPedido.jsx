@@ -1,9 +1,9 @@
 import { Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import Swal from "sweetalert2";
-import { consultarListaPedidos } from "../../helpers/queries";
+// import { Link } from "react-router-dom";
+// import Swal from "sweetalert2";
+// import { consultarListaPedidos } from "../../helpers/queries";
 
-const ItemPedido = ({ pedido, setListaPedidos }) => {
+const ItemPedido = ({ pedido}) => {
   console.log(pedido);
 const cambiarEstado = ()=> {
     console.log(cambiarEstado);
