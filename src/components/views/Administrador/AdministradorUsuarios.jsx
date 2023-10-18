@@ -1,7 +1,18 @@
 import { Table, Container, Button, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import CargarUsuario from "./CargarUsuario";
+import { useEffect, useState } from "react";
+import { consultaListaUsuarios } from "../../helpers/queries";
 
 const AdministradorUsuarios = () => {
+  const [usuarios, setUsuarios] = useState([]);
+
+  useEffect(() => {
+    consultaListaUsuarios().then((respuesta) => {
+      setUsuarios(respuesta);
+    });
+  }, []);
+
   return (
     <Container className="mainSection">
       <Row>
@@ -21,28 +32,21 @@ const AdministradorUsuarios = () => {
         <Table striped bordered hover size="sm" responsive="sm">
           <thead>
             <tr>
-              <th>#</th>
-              <th>Nombre</th>
-              <th>Apellido</th>
+              <th>id</th>
               <th>Email</th>
-              <th>Rol</th>
+              <th>es admin?</th>
+              <th>Usuario</th>
               <th>Opciones</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>Emanuel</td>
-              <td>Perez</td>
-              <td>emanuelp@gmail.com</td>
-              <td>Administrador</td>
-              <td>
-                <div className="d-flex justify-content-around">
-                  <Button variant="warning">Editar</Button>
-                  <Button variant="danger">Eliminar</Button>
-                </div>
-              </td>
-            </tr>
+            {usuarios.map((usuario) => (
+              <CargarUsuario
+                key={usuario._id}
+                usuario={usuario}
+                setUsuarios={setUsuarios}
+              ></CargarUsuario>
+            ))}
           </tbody>
         </Table>
       </Container></Col>
