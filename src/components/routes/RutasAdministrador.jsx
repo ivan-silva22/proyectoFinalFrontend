@@ -4,6 +4,8 @@ import AdministradorUsuarios from "../views/Administrador/AdministradorUsuarios"
 import AdministradorPedidos from "../views/Administrador/AdministradorPedidos";
 import CrearProducto from "../views/Producto/CrearProducto";
 import EditarProducto from "../views/Producto/EditarProducto";
+import EditarUsuario from "../views/Administrador/EditarUsuario";
+
 
 const RutasAdministrador = () => {
   return (
@@ -18,6 +20,11 @@ const RutasAdministrador = () => {
           exact
           path="/usuarios"
           element={<AdministradorUsuarios></AdministradorUsuarios>}
+        ></Route>
+        <Route
+          exact
+          path="/usuarios/editarusuario/:id"
+          element={<EditarUsuario></EditarUsuario>}
         ></Route>
         <Route
           exact
