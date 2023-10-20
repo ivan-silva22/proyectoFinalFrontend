@@ -4,34 +4,33 @@ import { login } from "../helpers/queries";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
-
-
-const Login = ({setUsuarioLogueado}) => {
-  const { register, handleSubmit, formState: {errors}, reset} = useForm(); 
+const Login = ({ setUsuarioLogueado }) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
   const navegacion = useNavigate();
 
-  const onSubmit = (usuario)=>{
+  const onSubmit = (usuario) => {
     console.log(usuario);
-    login(usuario).then((respuesta)=>{
-      if(respuesta){
-        sessionStorage.setItem('usuario', JSON.stringify(respuesta));
-        setUsuarioLogueado(respuesta)
+    login(usuario).then((respuesta) => {
+      if (respuesta) {
+        sessionStorage.setItem("usuario", JSON.stringify(respuesta));
+        setUsuarioLogueado(respuesta);
         reset();
-        navegacion('/administradorproductos');
+        navegacion("/administradorproductos");
         Swal.fire(
-          'Bienvenido',
+          "Bienvenido",
           `${respuesta.nombreUsuario} iniciaste sesion correctamente`,
-          'success'
-        )
-      }else{
-        Swal.fire(
-          'Error',
-          'El email o password son incorrectos',
-          'error'
-        )
+          "success"
+        );
+      } else {
+        Swal.fire("Error", "El email o password son incorrectos", "error");
       }
-    })
-  }
+    });
+  };
 
   return (
     <Container className="mainSection letraDancing h5 fs-5">
@@ -44,36 +43,70 @@ const Login = ({setUsuarioLogueado}) => {
               <Form.Control
                 type="email"
                 placeholder="Ingrese un email"
-               { ...register('email', {
-                required:'El email es un dato obligatorio',
-                pattern:{
-                  value: /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=? ^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a -z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
-                  message:'El email debe tener el siguiente formato mail@dominio.com'
-                }
-               } ) }
+                {...register("email", {
+                  required: "El email es un dato obligatorio",
+                  pattern: {
+                    value:
+                      /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=? ^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a -z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
+                    message:
+                      "El email debe tener el siguiente formato mail@dominio.com",
+                  },
+                })}
+                maxLength={50}
               />
-             <Form.Text className="text-danger">
-               {errors.email?.message}
-             </Form.Text>
+              <Form.Text className="text-danger">
+                {errors.email?.message}
+              </Form.Text>
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="Password"
-               {...register('password',{
-                required: 'El password es obligatorio',
-                pattern:{
-                  value: /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/,
-                  message: 'El password debe tener al entre 8 y 16 caracteres, al menos un dígito, al menos una minúscula y al menos una mayúscula. No puede tener otros símbolos.'
-                }
-               })}
-              />
-            <Form.Text className="text-danger">
-               {errors.password?.message}
-            </Form.Text>
-            </Form.Group>
+                <Form.Label>Contraseña</Form.Label>
+                <Form.Control
+                  type="password"
+                  placeholder="Contraseña"
+                  {...register("password", {
+                    required: "La contraseña es un dato obligatorio",
+                    pattern: {
+                      value: /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[\w\d\S]{8,100}$/,
+                      message: () => {
+                        let errorMessage =
+                          "La contraseña no cumple con los requisitos.";
+                        const passwordValue =
+                          errors.password && errors.password.ref.value;
+
+                        if (passwordValue && !/[A-Z]/.test(passwordValue)) {
+                          errorMessage +=
+                            " La contraseña debe contener al menos una mayúscula.";
+                        }
+
+                        if (passwordValue && !/[a-z]/.test(passwordValue)) {
+                          errorMessage +=
+                            " La contraseña debe contener al menos una minúscula.";
+                        }
+
+                        if (passwordValue && !/\d/.test(passwordValue)) {
+                          errorMessage +=
+                            " La contraseña debe contener al menos un dígito.";
+                        }
+
+                        return errorMessage;
+                      },
+                    },
+                  })}
+                  minLength={8}
+                  maxLength={100}
+                />
+                {errors.password && (
+                  <div className="text-danger">
+                    {errors.password.type === "required" && (
+                      <p>La contraseña es un dato obligatorio.</p>
+                    )}
+                    {errors.password.type === "pattern" && (
+                      <p>{errors.password.message()}</p>
+                    )}
+                  </div>
+                )}
+              </Form.Group>
             <Button variant="primary" type="submit">
               Ingresar
             </Button>
@@ -85,8 +118,3 @@ const Login = ({setUsuarioLogueado}) => {
 };
 
 export default Login;
-        
-        
-              
-        
-              

@@ -23,7 +23,6 @@ const EditarUsuario = () => {
           setValue('es_admin', respuesta.es_admin);
           setValue('nombreUsuario', respuesta.nombreUsuario);
           setValue('password', respuesta.password);
-          setValue('es_admin', respuesta.es_admin);
         }else{
           Swal.fire('Ocurrio un error', `No se puede editar el usuario, intentelo mas tarde`, 'error');
         }
@@ -97,8 +96,8 @@ const EditarUsuario = () => {
               })}
             >
               <option value="">Seleccione una opcion</option>
-              <option value="true">Si</option>
-              <option value="false">No</option>
+              <option value="Si">Si</option>
+              <option value="No">No</option>
             </Form.Select>
             <Form.Text className="text-danger">
               {errors.es_admin?.message}

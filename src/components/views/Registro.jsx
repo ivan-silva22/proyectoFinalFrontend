@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import { consultaAgregarUsuario } from "../helpers/queries";
 
-
 const Registro = () => {
   const {
     register,
@@ -12,7 +11,6 @@ const Registro = () => {
     reset,
   } = useForm();
 
-
   const onSubmit = (usuarioNuevo) => {
     consultaAgregarUsuario(usuarioNuevo).then((respuestaCreated) => {
       console.log(respuestaCreated);
@@ -20,96 +18,142 @@ const Registro = () => {
         if (usuarioNuevo.tipoUsuario === "admin") {
           // Lógica para el administrador
           Swal.fire(
-            'Administrador creado',
+            "Administrador creado",
             `El administrador ${usuarioNuevo.nombreUsuario} fue creado correctamente`,
-            'success'
+            "success"
           );
         } else {
           // Lógica para usuario común
           Swal.fire(
-            'Usuario creado',
+            "Usuario creado",
             `El usuario ${usuarioNuevo.nombreUsuario} fue creado correctamente`,
-            'success'
+            "success"
           );
         }
         reset();
       } else {
         Swal.fire(
-          'Ocurrió un error',
+          "Ocurrió un error",
           `El usuario ${usuarioNuevo.nombreUsuario} no fue creado, inténtelo más tarde`,
-          'error'
+          "error"
         );
       }
     });
   };
-  
+
   return (
     <section className="container mainSection h5 fs-4 letraDancing">
       <h1 className="display-4 mt-5">Nuevo usuario</h1>
       <hr />
-
-      
-
-
-
 
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Form.Group className="mb-3" controlId="formNombreUsuario">
           <Form.Label>Nombre de usuario</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Ej: juan123"
-            {...register("nombreUsuario", {
-              required: "El nombre de usuario es obligatorio",
-              minLength: {
-                value: 2,
-                message: "La cantidad mínima de caracteres es de 2 dígitos",
+            placeholder="Ingrese un nombre de usuario"
+            {...register("nombre", {
+              required: {
+                value: true,
+                message: "El Usuario es un dato obligatorio",
               },
-              maxLength: {
-                value: 100,
-                message: "La cantidad máxima de caracteres es de 100 dígitos",
+              pattern: {
+                value: /^(?!\s)(?!.*\s$)[a-zA-Z\s]+$/,
+                message:
+                  "El usuario debe contener solo letras y espacios y no puede empezar ni terminar con espacios.",
               },
             })}
+            maxLength={35}
           />
-          <Form.Text className="text-danger">
-            {errors.nombreUsuario?.message}
-          </Form.Text>
+
+          {errors.nombre && (
+            <div className="text-danger">
+              {errors.nombre.type === "required" && (
+                <p>El usuario es un dato obligatorio.</p>
+              )}
+              {errors.nombre.type === "pattern" && (
+                <p>{errors.nombre.message}</p>
+              )}
+            </div>
+          )}
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formEmail">
           <Form.Label>Email</Form.Label>
           <Form.Control
+            placeholder="Ingrese un email"
             type="email"
-            placeholder="Ej: ejemplo@correo.com"
             {...register("email", {
-              required: "El correo electrónico es obligatorio",
+              required: "El email es un dato obligatorio",
               pattern: {
-                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                message: "Correo electrónico inválido",
+                value:
+                  /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
+                message:
+                  "El email debe cumplir con el formato mail@dominio.com",
+              },
+              validate: (value) => {
+                const trimmedValue = value.trim();
+                if (value !== trimmedValue) {
+                  return "No se permiten espacios al principio y al final del email";
+                }
               },
             })}
+            maxLength={50}
           />
-          <Form.Text className="text-danger">
-            {errors.email?.message}
-          </Form.Text>
+          {errors.email && (
+            <p className="text-danger">{errors.email.message}</p>
+          )}
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formPassword">
           <Form.Label>Contraseña</Form.Label>
+
           <Form.Control
-            type="password"
-            placeholder="Ej: ********"
+            
+            placeholder="Contraseña"
             {...register("password", {
-              required: "La contraseña es obligatoria",
-              minLength: {
-                value: 6,
-                message: "La contraseña debe tener al menos 6 caracteres",
+              required: "La contraseña es un dato obligatorio",
+              pattern: {
+                value: /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[\w\d\S]{8,50}$/,
+                message: () => {
+                  let mensajeError =
+                    "La contraseña no cumple con los requisitos debe tener entre 8 y 50 caracteres y no incluir espacios.";
+                  const valorContraseña =
+                    errors.password && errors.password.ref.value;
+
+                  if (valorContraseña && !/[A-Z]/.test(valorContraseña)) {
+                    mensajeError +=
+                      " La contraseña debe contener al menos una mayúscula.";
+                  }
+
+                  if (valorContraseña && !/[a-z]/.test(valorContraseña)) {
+                    mensajeError +=
+                      " La contraseña debe contener al menos una minúscula.";
+                  }
+
+                  if (valorContraseña && !/\d/.test(valorContraseña)) {
+                    mensajeError +=
+                      " La contraseña debe contener al menos un dígito.";
+                  }
+
+                  return mensajeError;
+                },
               },
             })}
+            minLength={8}
+            maxLength={50}
           />
-          <Form.Text className="text-danger">
-            {errors.password?.message}
-          </Form.Text>
+
+          {errors.password && (
+            <div className="text-danger">
+              {errors.password.type === "required" && (
+                <p>La contraseña es un dato obligatorio.</p>
+              )}
+              {errors.password.type === "pattern" && (
+                <p>{errors.password.message()}</p>
+              )}
+            </div>
+          )}
         </Form.Group>
 
         <Button variant="primary" type="submit">
@@ -121,14 +165,3 @@ const Registro = () => {
 };
 
 export default Registro;
-
-
-
-
-
-  
-
-
-
-      
-
