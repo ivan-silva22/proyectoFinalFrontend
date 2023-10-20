@@ -23,21 +23,21 @@
     {
       "nombreUsuario": "ad min",
       "email": "admin@rollingcode.com",
-      "es_admin": "true",
+      "es_admin": "Si",
       "password": "Admin123",
       "id": 1
     },
     {
       "nombreUsuario": "Hugo Triunfetti",
       "email": "hernan@gmail.com",
-      "es_admin": "false",
+      "es_admin": "No",
       "password": "Hh12345678",
       "id": 2
     },
     {
       "nombreUsuario": "Rafa Ortega",
       "email": "rafa@admin.com",
-      "es_admin": "true",
+      "es_admin": "Si",
       "password": "Aa246810",
       "id": 3
     }

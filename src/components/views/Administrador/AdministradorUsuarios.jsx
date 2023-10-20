@@ -42,7 +42,7 @@ const AdministradorUsuarios = () => {
           <tbody>
             {usuarios.map((usuario) => (
               <CargarUsuario
-                key={usuario._id}
+                key={usuario.id}
                 usuario={usuario}
                 setUsuarios={setUsuarios}
               ></CargarUsuario>
