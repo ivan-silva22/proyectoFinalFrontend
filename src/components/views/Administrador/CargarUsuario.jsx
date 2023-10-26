@@ -9,7 +9,7 @@ import {
 const CargarUsuario = ({ usuario, setUsuarios }) => {
   const borrarUsuario = () => {
     Swal.fire({
-      title: `¿Estas seguro ${usuario.nombre}?`,
+      title: `¿Estas seguro ${usuario.nombreUsuario}?`,
       text: "Esto se borrara para siempre!",
       icon: "warning",
       showCancelButton: true,
@@ -23,7 +23,7 @@ const CargarUsuario = ({ usuario, setUsuarios }) => {
           if (respuesta.status === 200) {
             Swal.fire(
               "Usuario Eliminado!",
-              `El ${usuario.nombre} fue eliminado correctamente`,
+              `El usuario ${usuario.nombreUsuario} fue eliminado correctamente`,
               "success"
             );
 
