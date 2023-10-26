@@ -12,6 +12,9 @@ const Registro = () => {
   } = useForm();
 
   const onSubmit = (usuarioNuevo) => {
+    // Agregar el campo "es_admin" con el valor "No"
+    usuarioNuevo.es_admin = "No";
+
     consultaAgregarUsuario(usuarioNuevo).then((respuestaCreated) => {
       console.log(respuestaCreated);
       if (respuestaCreated && respuestaCreated.status === 201) {
@@ -52,7 +55,7 @@ const Registro = () => {
           <Form.Control
             type="text"
             placeholder="Ingrese un nombre de usuario"
-            {...register("nombre", {
+            {...register("nombreUsuario", {
               required: {
                 value: true,
                 message: "El Usuario es un dato obligatorio",
