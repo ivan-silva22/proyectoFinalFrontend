@@ -2,7 +2,7 @@ import { Button } from "react-bootstrap";
 import { cambiarEstadoPedido, consultarListaPedidos } from "../../helpers/queries";
 import Swal from "sweetalert2";
 
-const ItemPedido = ({ pedido, setPedidos }) => {
+const ItemPedido = ({ pedido, setPedidos, handleShow }) => {
   //console.log(pedido);
   const cambiarEstadoEntregado = () => {
     cambiarEstadoPedido(pedido._id).then((respuesta) => {
@@ -46,6 +46,9 @@ const ItemPedido = ({ pedido, setPedidos }) => {
           <Button variant="warning" onClick={cambiarEstadoEntregado}>
             {pedido.estado}
           </Button>
+          <Button variant="primary" onClick={handleShow}>
+        Ver Productos
+      </Button>
         </div>
       </td>
     </tr>
