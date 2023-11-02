@@ -53,7 +53,7 @@ const AdministradorPedidos = () => {
               <ItemPedido
                  key={pedido._id}
                 pedido={pedido}
-                // setPedidos={setPedidos}
+                setPedidos={setPedidos}
               ></ItemPedido>
             ))}
           </tbody>
