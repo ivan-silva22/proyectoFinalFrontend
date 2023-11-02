@@ -40,18 +40,20 @@ const AdministradorPedidos = () => {
         <Table responsive striped bordered hover>
           <thead>
             <tr>
+            <th>Id</th>
               <th>Fecha</th>
-              <th>NombreProducto</th>
+              <th>NombreUsuario</th>
               <th>Estado</th>
               <th>precioTotal</th>
+              <th>Acciones</th>
             </tr>
           </thead>
           <tbody>
             {pedidos.map((pedido) => (
               <ItemPedido
-                key={pedido._id}
+                 key={pedido._id}
                 pedido={pedido}
-                setPedidos={setPedidos}
+                // setPedidos={setPedidos}
               ></ItemPedido>
             ))}
           </tbody>

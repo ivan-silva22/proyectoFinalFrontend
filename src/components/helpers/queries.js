@@ -10,11 +10,14 @@ export const login = async (usuario) => {
       (itemUsuario) => itemUsuario.email === usuario.email
     );
     if (buscarUsuario) {
-      if (buscarUsuario.password === usuario.password) {
+      console.log('viene del back',buscarUsuario.password);
+      console.log('input',usuario.password);
+     // if (buscarUsuario.password === usuario.password) {
         return buscarUsuario;
-      } else {
-        return null;
-      }
+      //} else {
+        //console.log('null 1')
+        //return null;
+      //}
     } else {
       return null;
     }
@@ -89,6 +92,7 @@ export const consultarListaPedidos = async () => {
   try {
     const respuesta = await fetch(URLPedido);
     const listaPedidos = await respuesta.json();
+    console.log('pedidos',listaPedidos)
     return listaPedidos;
   } catch (error) {
     console.log(error);

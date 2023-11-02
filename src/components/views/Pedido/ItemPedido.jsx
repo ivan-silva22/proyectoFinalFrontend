@@ -3,21 +3,22 @@ import { Button } from "react-bootstrap";
 // import Swal from "sweetalert2";
 // import { consultarListaPedidos } from "../../helpers/queries";
 
-const ItemPedido = ({ pedido}) => {
+const ItemPedido = ({ pedido }) => {
   console.log(pedido);
-const cambiarEstado = ()=> {
+  const cambiarEstado = () => {
     console.log(cambiarEstado);
-}
+  };
 
   return (
     <tr>
-      <td>{pedido.id}</td>
-      <td>{pedido.usuario}</td>
+      <td>{pedido._id}</td>
       <td>{pedido.fecha}</td>
-      <td>{pedido.producto}</td>
+      <td>{pedido.usuario.nombreUsuario}</td>
+      <td>{pedido.estado}</td>
+      <td>{pedido.precioTotal}</td>
       <td>
         <div className="d-flex justify-content-around">
-          <Button variant="warning" onClick={cambiarEstado}>
+          <Button variant="warning" onClick={()=>cambiarEstado}>
             {pedido.estado}
           </Button>
         </div>
