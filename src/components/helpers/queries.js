@@ -159,5 +159,18 @@ export const consultaListaUsuarios = async () => {
   }catch(error){
       
   }
-
 }
+  export const cambiarEstadoPedido = async (id) =>{
+    try{
+        const respuesta = await fetch(URLPedido+'/entregado/'+id, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+        });
+        return respuesta;
+    }catch(error){
+      console.log(error);
+    }
+  }
+
