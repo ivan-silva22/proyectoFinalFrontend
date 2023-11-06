@@ -1,12 +1,15 @@
-
 import { useState, useEffect } from "react";
-import { Table, Button } from "react-bootstrap";
+import { Table, Button, Modal } from "react-bootstrap";
 import ItemPedido from "../Pedido/ItemPedido";
 import { Link } from "react-router-dom";
 import { consultarListaPedidos } from "../../helpers/queries";
 
 const AdministradorPedidos = () => {
   const [pedidos, setPedidos] = useState([]);
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   useEffect(() => {
     consultarListaPedidos()
@@ -26,7 +29,7 @@ const AdministradorPedidos = () => {
             Administrar Pedidos
           </h1>
 
-          <div className="mb-3">
+          {/* <div className="mb-3">
             <Button
               className="btnAgregarPedido"
               as={Link}
@@ -34,13 +37,13 @@ const AdministradorPedidos = () => {
             >
               Agregar nuevo pedido
             </Button>
-          </div>
+          </div> */}
         </div>
 
         <Table responsive striped bordered hover>
           <thead>
             <tr>
-            <th>Id</th>
+              <th>Id</th>
               <th>Fecha</th>
               <th>NombreUsuario</th>
               <th>Estado</th>
@@ -51,14 +54,51 @@ const AdministradorPedidos = () => {
           <tbody>
             {pedidos.map((pedido) => (
               <ItemPedido
-                 key={pedido._id}
+                key={pedido._id}
                 pedido={pedido}
                 setPedidos={setPedidos}
+                handleShow={handleShow}
               ></ItemPedido>
             ))}
           </tbody>
         </Table>
       </section>
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Lista de Productos del Pedido</Modal.Title>
+        </Modal.Header>
+        <Modal.Body><Table striped bordered hover>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>producto</th>
+          <th>cantidad</th>
+          <th>subtotal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Pizza</td>
+          <td>2</td>
+          <td>$6000</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Flan</td>
+          <td>2</td>
+          <td>$1300</td>
+        </tr>
+      
+      </tbody>
+    </Table></Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Cerrar
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 };
